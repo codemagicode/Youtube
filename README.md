@@ -17,6 +17,9 @@ This project is the source for the videos created in [Code Magi](https://youtube
 
 ## Current Changelog
 
+### 2. 16 Apr 2026
+- Added asset constants
+
 ### 1. 29 Mar 2026
 - Initial commit
 - Folder restructuring

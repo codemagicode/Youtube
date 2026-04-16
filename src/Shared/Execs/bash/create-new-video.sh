@@ -97,16 +97,6 @@ create_unique_file() {
   touch "$path"
 }
 
-# ---------------- PUBLIC ----------------
-
-public_dir=$(create_unique_dir "$base_public" "$folder_public")
-
-mkdir -p "$public_dir/audios"
-mkdir -p "$public_dir/bitmaps"
-mkdir -p "$public_dir/gifs"
-mkdir -p "$public_dir/videos"
-mkdir -p "$public_dir/svgs"
-
 # ---------------- SRC ----------------
 
 mkdir -p "$base_src"
