@@ -1,4 +1,4 @@
-import { CSSProperties } from "react";
+import { CSSProperties, } from "react";
 import { EasingFunction, interpolate, useCurrentFrame } from "remotion";
 
 const animation = (
@@ -28,6 +28,15 @@ const zoom = (params: FrameValueMapper): CSSProperties => {
     animation({frame, ...params})
   }`
  }
+}
+
+const rotate = (params: FrameValueMapper): CSSProperties => {
+  const frame = useCurrentFrame();
+  return {
+    rotate: `${
+      animation({frame, ...params})
+    }deg`
+  }
 }
 
 const positionAbsolute = (
@@ -72,10 +81,11 @@ const move = (params : {
 
 export const utils = {
   animation,
+  rotate,
   fade,
   zoom,
+  move,
   positionAbsolute,
-  absoluteAnimation: move
 }
 
 type FrameValueMapper = {

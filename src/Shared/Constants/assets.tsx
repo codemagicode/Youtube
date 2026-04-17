@@ -1,4 +1,7 @@
-import { Img, ImgProps, staticFile, Html5Video as HTML5Video, Html5Audio as HTML5Audio, RemotionAudioProps as AudioProps, RemotionVideoProps as VideoProps } from "remotion";
+import { Img, ImgProps, staticFile, Html5Video as HTML5Video, Html5Audio as HTML5Audio, RemotionAudioProps, RemotionVideoProps as VideoProps } from "remotion";
+import { RemotionMainAudioProps } from "remotion/dist/cjs/audio";
+
+type AudioProps = RemotionMainAudioProps & RemotionAudioProps
 
 const assetPath = {
     imgFile: (value: string) => `images/${value}`,
@@ -41,8 +44,8 @@ const KcmsBlueprint = (props: Omit<AudioProps, 'src'>) => {
     return (<HTML5Audio {...props} data-asset="KcmsBlueprint" src={staticFile(assetPath.audioFile('kcms-blueprint.m4a'))} />);
 }
 
-const Music = (props: Omit<AudioProps, 'src'>) => {
-    return (<HTML5Audio {...props} data-asset="Music" src={staticFile(assetPath.audioFile('music.mp3'))} />);
+const IntroMusic = (props: Omit<AudioProps, 'src'>) => {
+    return (<HTML5Audio {...props} data-asset="IntroMusic" src={staticFile(assetPath.audioFile('intro-music.mp3'))} />);
 }
 
 const Song = (props: Omit<AudioProps, 'src'>) => {
@@ -101,8 +104,8 @@ const PokemonStyleEvolutionVideo = (props: Omit<VideoProps, 'src'>) => {
     return (<HTML5Video {...props} data-asset="PokemonStyleEvolutionVideo" src={staticFile(assetPath.videoFile('Pokemon_Style_Evolution_Video.pm4'))} />);
 }
 
-const Bg = (props: Omit<ImgProps, 'src'>) => {
-    return (<Img {...props} data-asset="Bg" src={staticFile(assetPath.imgFile('bg.png'))} />);
+const IntroBG = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="IntroBG" src={staticFile(assetPath.imgFile('intro-bg.png'))} />);
 }
 
 const HomeOffice = (props: Omit<ImgProps, 'src'>) => {
@@ -157,8 +160,8 @@ const Optimized = (props: Omit<ImgProps, 'src'>) => {
     return (<Img {...props} data-asset="Optimized" src={staticFile(assetPath.imgFile('optimized.jpg'))} />);
 }
 
-const Stars = (props: Omit<ImgProps, 'src'>) => {
-    return (<Img {...props} data-asset="Stars" src={staticFile(assetPath.imgFile('stars.png'))} />);
+const IntroStars = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="IntroStars" src={staticFile(assetPath.imgFile('intro-stars.png'))} />);
 }
 
 const GateKeeper = (props: Omit<ImgProps, 'src'>) => {
@@ -273,8 +276,8 @@ const MouthChJ = (props: Omit<ImgProps, 'src'>) => {
     return (<Img {...props} data-asset="MouthChJ" src={staticFile(assetPath.svgFile('mouth-ch-j.svg'))} />);
 }
 
-const StarSvg = (props: Omit<ImgProps, 'src'>) => {
-    return (<Img {...props} data-asset="StarSvg" src={staticFile(assetPath.svgFile('star.svg'))} />);
+const GoldenStarSvg = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="GoldenStarSvg" src={staticFile(assetPath.svgFile('golden-star.svg'))} />);
 }
 
 const BodyBase = (props: Omit<ImgProps, 'src'>) => {
@@ -549,7 +552,7 @@ const Namaste = (props: Omit<ImgProps, 'src'>) => {
     SuperMarioExtender,
     Voice2,
     KcmsBlueprint,
-    Music,
+    IntroMusic,
     Song,
     UmsBlueprint,
     Voice,
@@ -564,7 +567,7 @@ const Namaste = (props: Omit<ImgProps, 'src'>) => {
     RomanticBirthdayVideoCreation,
     FreeMoneyRain,
     PokemonStyleEvolutionVideo,
-    Bg,
+    IntroBG,
     HomeOffice,
     Image2,
     Mibfreeze,
@@ -578,7 +581,7 @@ const Namaste = (props: Omit<ImgProps, 'src'>) => {
     Image12,
     ImageWebp,
     Optimized,
-    Stars,
+    IntroStars,
     GateKeeper,
     Image1,
     KcmsThumbnail,
@@ -607,7 +610,7 @@ const Namaste = (props: Omit<ImgProps, 'src'>) => {
     Background,
     JsonData,
     MouthChJ,
-    StarSvg,
+    GoldenStarSvg,
     BodyBase,
     JsonFile,
     MouthEIi,
