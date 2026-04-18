@@ -75,7 +75,7 @@ export const useUtil = (frame: number) => {
     }
   }
 
-  return { positionAbsolute, rotate, zoom, fade, animation}
+  return { positionAbsolute, rotate, zoom, fade, animation, move}
 
 }
 

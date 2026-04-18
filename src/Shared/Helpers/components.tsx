@@ -5,15 +5,26 @@
 import { JSX } from "react";
 import { useCurrentFrame } from "remotion";
 
+const cache: Record<string, React.FC<React.HTMLAttributes<HTMLDivElement>>> = {};
+
 export const NamedElement = new Proxy(
   {},
   {
     get(_, key: string) {
-      return ({ children, ...props }: React.PropsWithChildren<DivProps>) => (
-        <div data-element={key} {...props}>
-          {children}
-        </div>
-      );
+      if (typeof key !== 'string') {
+        return undefined;
+      }
+
+      if (!cache[key]) {
+        const Component = ({ children, ...props }: React.PropsWithChildren<DivProps>) => (
+          <div data-element={key} {...props}>
+            {children}
+          </div>
+        );
+        Component.displayName = `NamedElement(${key})`;
+        cache[key] = Component;
+      }
+      return cache[key];
     },
   }
 ) as NamedElementType;

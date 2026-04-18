@@ -2,6 +2,9 @@
 
 All changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 3. 19 Apr 2026
+- Merged initial setup
+
 ## 2. 18 Apr 2026
 - Merged inital setup
 
@@ -9,6 +12,10 @@ All changes to this project will be documented in this file. The format is based
 - Merged Initial setup
 
 ================================================
+
+## 7.19 Ape 2026
+- Updated name element component to cache it
+- Including move at return for useUtil
 
 ## 6. 18 Apr 2026
 - Updated utils as hook to get frame
