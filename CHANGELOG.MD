@@ -2,10 +2,16 @@
 
 All changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 2. 18 Apr 2026
+- Merged inital setup
+
 ## 1. 18 Apr 2026
 - Merged Initial setup
 
 ================================================
+
+## 6. 18 Apr 2026
+- Updated utils as hook to get frame
 
 ## 5. 18 Apr 2026
 - Changed file paths for magi characters
