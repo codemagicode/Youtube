@@ -2,6 +2,11 @@
 
 All changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 7.19 Ape 2026
+- Updated name element component to cache it
+- Including move at return for useUtil
+
+
 ## 6. 18 Apr 2026
 - Updated utils as hook to get frame
 
