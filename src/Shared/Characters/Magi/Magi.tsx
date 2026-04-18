@@ -206,7 +206,7 @@ const Head = (props: CommonProps) => {
             style={styles.relative}
             data-element="head-wrapper"
         >
-            <Img src={staticFile('mascots/magi/head-base.svg')} data-element="Head" />
+            <Img src={staticFile('svgs/head-base.svg')} data-element="Head" />
             <Eyes />
             <EyeBrows />
             <Mouth />
@@ -254,10 +254,10 @@ const Eyes = (props: CommonProps) => {
 
     return (
         <div style={{ ...styles.container, ...style }} >
-            {currentEyeType === 'normal' && <Img src={staticFile('mascots/magi/eye-normal.svg')} style={styles.eyes} />}
-            {currentEyeType === 'close' && <Img src={staticFile('mascots/magi/eye-close.svg')} style={styles.eyesClosed} />}
-            {currentEyeType === 'funky' && <Img src={staticFile('mascots/magi/eye-funky.svg')} style={styles.eyes} />}
-            <Img src={staticFile('mascots/magi/glasses.svg')} style={styles.glasses} />
+            {currentEyeType === 'normal' && <Img src={staticFile('svgs/eye-normal.svg')} style={styles.eyes} />}
+            {currentEyeType === 'close' && <Img src={staticFile('svgs/eye-close.svg')} style={styles.eyesClosed} />}
+            {currentEyeType === 'funky' && <Img src={staticFile('svgs/eye-funky.svg')} style={styles.eyes} />}
+            <Img src={staticFile('svgs/glasses.svg')} style={styles.glasses} />
         </div>
     );
 }
@@ -350,8 +350,8 @@ const EyeBrows = () => {
         },
     } satisfies NestedStyleType
     return <div>
-        <Img src={staticFile('mascots/magi/eyebrow.svg')} style={{ ...styles.brow, ...styles.right }} />
-        <Img src={staticFile('mascots/magi/eyebrow.svg')} style={{ ...styles.brow, ...styles.left }} />
+        <Img src={staticFile('svgs/eyebrow.svg')} style={{ ...styles.brow, ...styles.right }} />
+        <Img src={staticFile('svgs/eyebrow.svg')} style={{ ...styles.brow, ...styles.left }} />
     </div>
 }
 
@@ -392,7 +392,7 @@ const Mouth = () => {
         }
     } satisfies NestedStyleType
     return <div style={styles.container} >
-        <Img src={staticFile(`mascots/magi/mouth-${type}.svg`)} />
+        <Img src={staticFile(`svgs/mouth-${type}.svg`)} />
     </div>
 }
 
@@ -400,7 +400,7 @@ const Mouth = () => {
 const Body = (props: CommonProps) => {
     const { style } = props
     return <>
-        <Img src={staticFile('mascots/magi/body-base.svg')} style={style} data-element="Body" />
+        <Img src={staticFile('svgs/body-base.svg')} style={style} data-element="Body" />
     </>
 }
 
@@ -511,7 +511,7 @@ const Joints = (props: CommonProps & {
     } satisfies NestedStyleType
     return <div style={{ ...style, ...styles.container }} data-element={`${jointName}-wrapper`} >
         <Img
-            src={staticFile(`mascots/magi/${imgName.upperJoint}.svg`)}
+            src={staticFile(`svgs/${imgName.upperJoint}.svg`)}
             data-element={`${jointName}-${imgName.upperJoint}`}
         />
         <div style={jointName.includes('hand')
@@ -521,7 +521,7 @@ const Joints = (props: CommonProps & {
             data-element={`lower-${jointName}-wrapper`}
         >
             <Img
-                src={staticFile(`mascots/magi/${imgName.lowerJoint}.svg`)}
+                src={staticFile(`svgs/${imgName.lowerJoint}.svg`)}
                 data-element={`${jointName}-${imgName.lowerJoint}`}
                 style={jointName.includes('leg') ? styles.lowerJointlegImage : undefined}
             />

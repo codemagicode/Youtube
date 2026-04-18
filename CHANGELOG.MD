@@ -2,6 +2,10 @@
 
 All changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 5. 18 Apr 2026
+- Changed file paths for magi characters
+- Updated assets with Voice
+
 ## 4. 17 Apr 2026
 - Added Intro feature
 - Added rotate helper

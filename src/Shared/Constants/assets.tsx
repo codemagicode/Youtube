@@ -1,7 +1,7 @@
-import { Img, ImgProps, staticFile, Html5Video as HTML5Video, Html5Audio as HTML5Audio, RemotionAudioProps, RemotionVideoProps as VideoProps } from "remotion";
-import { RemotionMainAudioProps } from "remotion/dist/cjs/audio";
+import { Img, ImgProps, staticFile, Html5Video as HTML5Video, Html5Audio as HTML5Audio, RemotionVideoProps as VideoProps } from "remotion";
+import { ComponentProps } from "react";
 
-type AudioProps = RemotionMainAudioProps & RemotionAudioProps
+type AudioProps = ComponentProps<typeof HTML5Audio>
 
 const assetPath = {
     imgFile: (value: string) => `images/${value}`,
@@ -540,10 +540,15 @@ const Namaste = (props: Omit<ImgProps, 'src'>) => {
     return (<Img {...props} data-asset="Namaste" src={staticFile(assetPath.gifFile('namaste.gif'))} />);
 }
 
+const Voice4Handshake = (props: {index: string} & Omit<AudioProps, 'src'>) => {
+    return (<HTML5Audio {...props} src={staticFile(assetPath.audioFile(`4-${props.index}.mp3`))} />)
+}
+
 /**
  * Assets
  */
  export const Assets = {
+    Voice4Handshake,
     AppIcon,
     JSONIcon,
     KcmsBlueprint2,
