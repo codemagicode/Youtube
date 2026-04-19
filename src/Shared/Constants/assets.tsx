@@ -12,6 +12,26 @@ const assetPath = {
     bgAudioFile: (value: string) => `audios/${value}`,
 }
 
+const Scene6Bg = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="Scene6Bg" src={staticFile(assetPath.imgFile('scene6.jpeg'))} />)
+}
+
+const JsonFile = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="JsonFile" src={staticFile(assetPath.svgFile('json-file.svg'))} />)
+}
+
+const MaskMeme = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="MaskMeme" src={staticFile(assetPath.imgFile('mask-meme.jpg'))} />)
+}
+
+const ClockHand = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="ClockHand" src={staticFile(assetPath.svgFile('clock_hand.svg'))} />)
+}
+
+const Clock = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="Clock" src={staticFile(assetPath.svgFile('clock.svg'))} />)
+}
+
 const Pub = (props: Omit<ImgProps, 'src'>) => {
     return (<Img {...props} data-asset="Pub" src={staticFile(assetPath.imgFile('pub.jpeg'))} />)
 }
@@ -340,10 +360,6 @@ const BodyBase = (props: Omit<ImgProps, 'src'>) => {
     return (<Img {...props} data-asset="BodyBase" src={staticFile(assetPath.svgFile('body-base.svg'))} />);
 }
 
-const JsonFile = (props: Omit<ImgProps, 'src'>) => {
-    return (<Img {...props} data-asset="JsonFile" src={staticFile(assetPath.svgFile('json-file.svg'))} />);
-}
-
 const MouthEIi = (props: Omit<ImgProps, 'src'>) => {
     return (<Img {...props} data-asset="MouthEIi" src={staticFile(assetPath.svgFile('mouth-e-ii.svg'))} />);
 }
@@ -605,6 +621,11 @@ const Voice4Handshake = (props: {clip: string}) => {
  */
  export const Assets = {
     Voice4Handshake,
+    Scene6Bg,
+    JsonFile,
+    MaskMeme,
+    ClockHand,
+    Clock,
     Pub,
     ConvRev,
     Conv,
@@ -687,7 +708,6 @@ const Voice4Handshake = (props: {clip: string}) => {
     MouthChJ,
     GoldenStarSvg,
     BodyBase,
-    JsonFile,
     MouthEIi,
     StraightLine,
     Bus,

@@ -276,6 +276,9 @@ export const styles04handshake = {
     maskMeme: {
       width: '1000px'
     },
+    maskMemeWrapper: {
+      marginTop: '400px'
+    },
     jsonGrid: {
       display: 'grid',
       gridTemplateColumns: 'repeat(6, 1fr)',

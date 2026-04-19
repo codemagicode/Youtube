@@ -15,6 +15,7 @@ import { CameraShake } from "../../Shared/Effects/CameraShake"
 import Typewriter from "../../Shared/Effects/Typewriter"
 import { SmokeParticles } from "../../Shared/Effects/SmokeParticles"
 import { sampleJson } from "./accessories-Handshake-04"
+import { Motion } from "../../Shared/Effects/Motion"
 
 const { Voice4Handshake: Voice } = Assets
 
@@ -627,6 +628,82 @@ const ContentSource = () => {
 
             </SceneryScene>
         </Element.SceneContentSource>
+    )
+}
+
+const ToolBuilding = () => {
+    const frame = useCurrentFrame();
+    const { fade, rotate } = useUtil(frame)
+    const jsonFrameStart = 660;
+
+    const animations = {
+        sceneWrapper: {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+        },
+        clockWrapper: {
+            ...styles.ToolBuilding.clockWrapper,
+        },
+        clockHand: {
+            ...styles.ToolBuilding.clockHand,
+            ...rotate({
+                frameFromTo: [30, 300],
+                values: [0, 360 * 2]
+            })
+        }
+    } satisfies Record<string, CSSProperties>
+
+    return (
+        <Element.SceneToolBuilding style={styles.base.container}>
+            <SceneryScene sceneryAsset='images/4-6.jpeg' isImage={true}>
+                <Sequence from={0} name='audio-section' >
+                    <Voice clip="6" />
+                </Sequence>
+                <Element.SceneTitle style={styles.scene.title}>Building the Tool</Element.SceneTitle>
+                <Element.SceneWrapper style={animations.sceneWrapper}>
+
+                    <Show at={[{ from: 30, to: 300 }]}>
+                        <Motion in={['scale', 'fade']} out={['slide-up', 'fade']} inStart={30} outStart={270} >
+                            <Element.ClockWrapper style={animations.clockWrapper} >
+                                <Assets.Clock style={styles.ToolBuilding.clock} />
+                                <Assets.ClockHand style={animations.clockHand} />
+                            </Element.ClockWrapper>
+                        </Motion>
+                    </Show>
+
+                    <Show at={[{ from: 300, to: 600 }]}>
+                        <Element.MaskMemeWrapper style={styles.ToolBuilding.maskMemeWrapper} >
+                            <Motion in={['spring-scale', 'bounce']} out={['scale', 'fade']} inStart={300} outStart={590}>
+                                <FloatingAsset>
+                                    <Assets.MaskMeme style={styles.ToolBuilding.maskMeme} />
+                                </FloatingAsset>
+                            </Motion>
+                        </Element.MaskMemeWrapper>
+                    </Show>
+
+                    <Show at={[{ from: 660 }]}>
+                        <Element.JsonGrid style={styles.ToolBuilding.jsonGrid} >
+                            {new Array(36).fill(1).map((_, index) => {
+                                const start = (index * 10) + jsonFrameStart;
+                                return (
+                                    <Assets.JsonFile
+                                        key={index}
+                                        style={{
+                                            ...styles.ToolBuilding.jsonFile,
+                                            ...fade({
+                                                frameFromTo: [start, start + 30],
+                                                values: [0, 1]
+                                            })
+                                        }}
+                                    />
+                                )
+                            })}
+                        </Element.JsonGrid>
+                    </Show>
+                </Element.SceneWrapper>
+            </SceneryScene>
+        </Element.SceneToolBuilding>
     )
 }
 
