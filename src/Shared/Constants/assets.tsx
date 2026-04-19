@@ -12,6 +12,30 @@ const assetPath = {
     bgAudioFile: (value: string) => `audios/${value}`,
 }
 
+const MetaJsonEnterDoor = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="MetaJsonEnterDoor" src={staticFile(assetPath.svgFile('meta-json-enter-door.svg'))} />)
+}
+
+const MetaJsonDoorClosed = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="MetaJsonDoorClosed" src={staticFile(assetPath.svgFile('meta-json-door-closed.svg'))} />)
+}
+
+const Jsdelivr = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="Jsdelivr" src={staticFile(assetPath.svgFile('jsdelivr.svg'))} />)
+}
+
+const Github = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="Github" src={staticFile(assetPath.svgFile('github.svg'))} />)
+}
+
+const MoneyChair = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="MoneyChair" src={staticFile(assetPath.svgFile('money-chair.svg'))} />)
+}
+
+const Database = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="Database" src={staticFile(assetPath.svgFile('database.svg'))} />)
+}
+
 const Politician = (props: Omit<ImgProps, 'src'>) => {
     return (<Img {...props} data-asset="Politician" src={staticFile(assetPath.svgFile('politician.svg'))} />)
 }
@@ -559,6 +583,12 @@ const Voice4Handshake = (props: {clip: string}) => {
     Voice4Handshake,
     JsFramework,
     Politician,
+    MetaJsonEnterDoor,
+    MetaJsonDoorClosed,
+    Jsdelivr,
+    Github,
+    MoneyChair,
+    Database,
     AppIcon,
     JSONIcon,
     KcmsBlueprint2,

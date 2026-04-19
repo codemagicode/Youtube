@@ -187,7 +187,161 @@ const TheEngine = () => {
     )
 }
 
+// --- Scene 3: Fetching Strategy ---
+const FetchingStrategy = () => {
+    const frame = useCurrentFrame();
+    const { fade, zoom, move } = useUtil(frame)
+    const animations = {
+        sceneWrapper: {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+        },
+        magiWrapper: {
+            ...styles.magi.absolute,
+            ...move({
+                top: {
+                    frameFromTo: [0, 30, 320, 321, 440, 441],
+                    values: [-60, 20, 20, 120, 120, 40]
+                },
+                left: {
+                    frameFromTo: [0, 440, 441],
+                    values: [32, 32, 65]
+                },
+                unit: '%'
+            }),
+            ...zoom({
+                frameFromTo: [320, 321, 440, 441],
+                values: [1, 5, 5, 1]
+            }),
+        },
+        dataText: {
+            ...styles.FetchingStrategy.dataTextWrapper,
+            ...fade({
+                frameFromTo: [130, 150],
+                values: [1, 0]
+            })
+        },
+        databaseIcon: {
+            ...styles.FetchingStrategy.databaseIcon,
+            ...zoom({
+                frameFromTo: [250, 260, 345, 365],
+                values: [0, 1, 1, 0]
+            }),
+            ...fade({
+                frameFromTo: [345, 365],
+                values: [1, 0]
+            })
+        },
+        moneyChair: {
+            ...styles.FetchingStrategy.moneyChair,
+        },
+        githubIcon: {
+            ...styles.FetchingStrategy.logoIcon,
+            ...move({
+                left: {
+                    frameFromTo: [728, 738],
+                    values: [50, 30]
+                },
+                unit: '%'
+            }),
+            ...fade({
+                frameFromTo: [616, 621, 871, 876],
+                values: [0, 1, 1, 0]
+            }),
+            ...zoom({
+                frameFromTo: [616, 621, 871, 876],
+                values: [0.5, 1, 1, 0.5]
+            })
+        },
+        jsdelivrIcon: {
+            ...styles.FetchingStrategy.logoIcon,
+            ...move({
+                left: {
+                    frameFromTo: [728, 738],
+                    values: [50, 55]
+                },
+                unit: '%'
+            }),
+            ...fade({
+                frameFromTo: [728, 738, 871, 876],
+                values: [0, 1, 1, 0]
+            }),
+            ...zoom({
+                frameFromTo: [728, 738, 871, 876],
+                values: [0.5, 1, 1, 0.5]
+            })
+        },
+        metaDoorClosed: {
+            ...styles.FetchingStrategy.metaDoorIcon,
+        },
+        metaDoorEnter: {
+            ...styles.FetchingStrategy.metaDoorIcon,
+            left: '30.5%',
+            top: '18.5%',
+        }
+    } satisfies Record<string, CSSProperties>
+
+    return (
+        <Element.SceneFetchingStrategy style={styles.base.container}>
+            <Element.SceneWrapper style={animations.sceneWrapper}>
+                <Sequence from={0} name='audio-section' >
+                    <Voice clip="3" />
+                </Sequence>
+                <SceneryScene sceneryAsset='videos/4-3.mp4' >
+                    <Element.SceneTitle style={styles.scene.title}>Fetching Strategy</Element.SceneTitle>
+                    <Element.MagiWrapper style={animations.magiWrapper} >
+                        <Magi {...charData04.FetchingStrategy} />
+                        <Show at={[{ to: 150 }]}>
+                            <Element.DataTextWrapper style={animations.dataText}>
+                                <MetallicText text="DATA" />
+                            </Element.DataTextWrapper>
+                        </Show>
+                        <Show at={[{ from: 250, to: 365 }]}>
+                            <Element.DatabaseIconWrapper style={animations.databaseIcon}>
+                                <Assets.Database style={{ width: '100%' }} />
+                            </Element.DatabaseIconWrapper>
+                        </Show>
+                    </Element.MagiWrapper>
+
+                    <Show at={[{ from: 441 }]}>
+                        <Element.MoneyChairWrapper style={animations.moneyChair}>
+                            <Assets.MoneyChair />
+                        </Element.MoneyChairWrapper>
+                    </Show>
+
+                    <Show at={[{ from: 616, to: 876 }]}>
+                        <Element.GithubIconWrapper style={animations.githubIcon}>
+                            <Assets.Github style={{ width: '100%', height: '100%' }} />
+                        </Element.GithubIconWrapper>
+                    </Show>
+
+                    <Show at={[{ from: 728, to: 876 }]}>
+                        <Element.JsdelivrIconWrapper style={animations.jsdelivrIcon}>
+                            <Assets.Jsdelivr style={{ width: '100%', height: '100%' }} />
+                        </Element.JsdelivrIconWrapper>
+                    </Show>
+
+                    <Show at={[{ from: 900, to: 999 }]}>
+                        <Element.MetaDoorClosedWrapper style={animations.metaDoorClosed}>
+                            <Assets.MetaJsonDoorClosed />
+                        </Element.MetaDoorClosedWrapper>
+                    </Show>
+
+                    <Show at={[{ from: 1000 }]}>
+                        <Element.MetaDoorEnterWrapper style={animations.metaDoorEnter}>
+                            <Assets.MetaJsonEnterDoor />
+                        </Element.MetaDoorEnterWrapper>
+                    </Show>
+
+                </SceneryScene>
+            </Element.SceneWrapper>
+        </Element.SceneFetchingStrategy>
+    )
+}
+
 export const Scenes04Handshake = {
     RecapIntro,
-    TheEngine
+    TheEngine,
+    FetchingStrategy
 }
