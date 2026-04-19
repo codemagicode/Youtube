@@ -60,6 +60,6 @@ type FrameRange = {
 }
 
 type ShowProps = {
-    children: React.ReactElement | JSX.Element | string | number
+    children: React.ReactNode
     at: FrameRange[]
 }
