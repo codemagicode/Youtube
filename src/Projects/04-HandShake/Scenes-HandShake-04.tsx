@@ -13,6 +13,8 @@ import { BouncingText } from "../../Shared/Effects/BouncingText"
 import { Oscillator } from "../../Shared/Effects/Oscillator"
 import { CameraShake } from "../../Shared/Effects/CameraShake"
 import Typewriter from "../../Shared/Effects/Typewriter"
+import { SmokeParticles } from "../../Shared/Effects/SmokeParticles"
+import { sampleJson } from "./accessories-Handshake-04"
 
 const { Voice4Handshake: Voice } = Assets
 
@@ -506,9 +508,132 @@ const HandshakeProcess = () => {
     )
 }
 
+// --- Scene 5: Content Source ---
+const ContentSource = () => {
+    const frame = useCurrentFrame();
+    const { durationInFrames } = useVideoConfig();
+    const { fade, rotate } = useUtil(frame)
+
+    const sample = sampleJson();
+    const json1 = sample[0].substring(0, Math.max(0, (frame - 470) * 2));
+    const json2 = sample[1].substring(0, Math.max(0, (frame - 500) * 2));
+    const json3 = sample[2].substring(0, Math.max(0, (frame - 530) * 2));
+
+    const condition = frame > 1380 && frame <= 1450;
+
+    const animations = {
+        magiWrapper1: {
+            ...styles.ContentSource.magiWrapper,
+        },
+        magiWrapper2: {
+            position: 'absolute',
+            top: '15%',
+            left: frame > 1280 && frame <= 1380 ? '59%' : condition ? '5%' : '32%',
+            transform: `scaleX(${condition ? '-1' : '1'})`
+        },
+        questionMark: {
+            ...styles.ContentSource.questionMark,
+            ...fade({
+                frameFromTo: [30, 60, 205, 225],
+                values: [0, 1, 1, 0]
+            })
+        },
+        flashcardContainer: {
+            ...fade({
+                frameFromTo: [450, 470],
+                values: [1, 0]
+            })
+        }
+    } satisfies Record<string, CSSProperties>
+
+    const flashcards = [
+        { frameFromTo: [370, 390], color: 'red', rotation: -40, emote: '🐘' },
+        { frameFromTo: [350, 370], color: 'yellow', rotation: -20, emote: '🐕️' },
+        { frameFromTo: [330, 350], color: 'green', rotation: 0, emote: '🐈️' }
+    ]
+
+    return (
+        <Element.SceneContentSource style={styles.base.container}>
+            <Sequence from={30} durationInFrames={durationInFrames - 30} >
+                <Voice clip="5" />
+            </Sequence>
+            <SceneryScene sceneryAsset='videos/4-5.mp4' blur={20} >
+                <Element.SceneTitle style={styles.scene.title}>Content Source</Element.SceneTitle>
+
+                <Show at={[{ to: 1044 }]}>
+                    <Element.MagiWrapper style={animations.magiWrapper1}>
+                        <Magi {...charData04.ContentSource} />
+                    </Element.MagiWrapper>
+                </Show>
+
+                <Show at={[{ from: 1045 }]}>
+                    <Element.MagiWrapper style={animations.magiWrapper2}>
+                        <Magi {...charData04.ContentSource} />
+                    </Element.MagiWrapper>
+                </Show>
+
+                <Show at={[{ from: 30, to: 225 }]}>
+                    <Element.QuestionMark style={animations.questionMark}>?</Element.QuestionMark>
+                </Show>
+
+                <Show at={[{ from: 470, to: 1044 }]}>
+                    <Sequence from={470} durationInFrames={574}>
+                        <SmokeParticles count={200} x={3200} y={1400} />
+                    </Sequence>
+                </Show>
+
+                <Show at={[{ from: 330, to: 470 }]}>
+                    <Element.FlashcardContainer style={animations.flashcardContainer}>
+                        {flashcards.map(({ frameFromTo, color, rotation, emote }) => {
+                            return (
+                                <Element.FlashCard
+                                    key={color}
+                                    style={{
+                                        ...styles.ContentSource.flashCard,
+                                        backgroundColor: color,
+                                        transformOrigin: 'bottom center',
+                                        ...rotate({
+                                            frameFromTo,
+                                            values: [0, rotation]
+                                        })
+                                    }}
+                                >
+                                    {emote}
+                                </Element.FlashCard>
+                            )
+                        })}
+                    </Element.FlashcardContainer>
+                </Show>
+
+                <Show at={[{ from: 470, to: 1044 }]}>
+                    <Element.JsonTextWrapper style={styles.ContentSource.jsonTextWrapper}>
+                        <Element.JsonContainer style={styles.ContentSource.jsonContainer}>
+                            <Element.Pre style={styles.ContentSource.pre}>
+                                <pre>{json1}</pre>
+                            </Element.Pre>
+                        </Element.JsonContainer>
+                        <Element.JsonContainer style={styles.ContentSource.jsonContainer}>
+                            <Element.Pre style={styles.ContentSource.pre}>
+                                <pre>{json2}</pre>
+                            </Element.Pre>
+                        </Element.JsonContainer>
+                        <Element.JsonContainer style={styles.ContentSource.jsonContainer}>
+                            <Element.Pre style={styles.ContentSource.pre}>
+                                <pre>{json3}</pre>
+                            </Element.Pre>
+                        </Element.JsonContainer>
+                    </Element.JsonTextWrapper>
+                </Show>
+
+            </SceneryScene>
+        </Element.SceneContentSource>
+    )
+}
+
 export const Scenes04Handshake = {
     RecapIntro,
     TheEngine,
     FetchingStrategy,
-    HandshakeProcess
+    HandshakeProcess,
+    ContentSource
 }
