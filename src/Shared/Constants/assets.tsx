@@ -12,6 +12,30 @@ const assetPath = {
     bgAudioFile: (value: string) => `audios/${value}`,
 }
 
+const Pub = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="Pub" src={staticFile(assetPath.imgFile('pub.jpeg'))} />)
+}
+
+const ConvRev = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="ConvRev" src={staticFile(assetPath.svgFile('conv-rev.svg'))} />)
+}
+
+const Conv = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="Conv" src={staticFile(assetPath.svgFile('conv.svg'))} />)
+}
+
+const Download = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="Download" src={staticFile(assetPath.svgFile('download.svg'))} />)
+}
+
+const LocalStorage = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="LocalStorage" src={staticFile(assetPath.svgFile('localstorage.svg'))} />)
+}
+
+const CdnSoftware = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="CdnSoftware" src={staticFile(assetPath.svgFile('CDN-software.svg'))} />)
+}
+
 const MetaJsonEnterDoor = (props: Omit<ImgProps, 'src'>) => {
     return (<Img {...props} data-asset="MetaJsonEnterDoor" src={staticFile(assetPath.svgFile('meta-json-enter-door.svg'))} />)
 }
@@ -581,6 +605,12 @@ const Voice4Handshake = (props: {clip: string}) => {
  */
  export const Assets = {
     Voice4Handshake,
+    Pub,
+    ConvRev,
+    Conv,
+    Download,
+    LocalStorage,
+    CdnSoftware,
     JsFramework,
     Politician,
     MetaJsonEnterDoor,

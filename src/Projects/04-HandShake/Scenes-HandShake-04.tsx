@@ -10,6 +10,9 @@ import { CSSProperties } from "react"
 import { MetallicText } from "../../Shared/Effects/MetallicText"
 import { FloatingAsset } from "../../Shared/Effects/FloatingAsset"
 import { BouncingText } from "../../Shared/Effects/BouncingText"
+import { Oscillator } from "../../Shared/Effects/Oscillator"
+import { CameraShake } from "../../Shared/Effects/CameraShake"
+import Typewriter from "../../Shared/Effects/Typewriter"
 
 const { Voice4Handshake: Voice } = Assets
 
@@ -233,6 +236,9 @@ const FetchingStrategy = () => {
                 values: [1, 0]
             })
         },
+        databaseAsset: {
+            width: '100%'
+        },
         moneyChair: {
             ...styles.FetchingStrategy.moneyChair,
         },
@@ -254,6 +260,10 @@ const FetchingStrategy = () => {
                 values: [0.5, 1, 1, 0.5]
             })
         },
+        githubAsset: {
+            width: '100%',
+            height: '100%'
+        },
         jsdelivrIcon: {
             ...styles.FetchingStrategy.logoIcon,
             ...move({
@@ -272,6 +282,10 @@ const FetchingStrategy = () => {
                 values: [0.5, 1, 1, 0.5]
             })
         },
+        jsdelivrAsset: {
+            width: '100%',
+            height: '100%'
+        },
         metaDoorClosed: {
             ...styles.FetchingStrategy.metaDoorIcon,
         },
@@ -288,7 +302,7 @@ const FetchingStrategy = () => {
                 <Sequence from={0} name='audio-section' >
                     <Voice clip="3" />
                 </Sequence>
-                <SceneryScene sceneryAsset='videos/4-3.mp4' >
+                <SceneryScene sceneryAsset='videos/scene3bgvid.mp4' >
                     <Element.SceneTitle style={styles.scene.title}>Fetching Strategy</Element.SceneTitle>
                     <Element.MagiWrapper style={animations.magiWrapper} >
                         <Magi {...charData04.FetchingStrategy} />
@@ -299,7 +313,7 @@ const FetchingStrategy = () => {
                         </Show>
                         <Show at={[{ from: 250, to: 365 }]}>
                             <Element.DatabaseIconWrapper style={animations.databaseIcon}>
-                                <Assets.Database style={{ width: '100%' }} />
+                                <Assets.Database style={animations.databaseAsset} />
                             </Element.DatabaseIconWrapper>
                         </Show>
                     </Element.MagiWrapper>
@@ -312,13 +326,13 @@ const FetchingStrategy = () => {
 
                     <Show at={[{ from: 616, to: 876 }]}>
                         <Element.GithubIconWrapper style={animations.githubIcon}>
-                            <Assets.Github style={{ width: '100%', height: '100%' }} />
+                            <Assets.Github style={animations.githubAsset} />
                         </Element.GithubIconWrapper>
                     </Show>
 
                     <Show at={[{ from: 728, to: 876 }]}>
                         <Element.JsdelivrIconWrapper style={animations.jsdelivrIcon}>
-                            <Assets.Jsdelivr style={{ width: '100%', height: '100%' }} />
+                            <Assets.Jsdelivr style={animations.jsdelivrAsset} />
                         </Element.JsdelivrIconWrapper>
                     </Show>
 
@@ -340,8 +354,161 @@ const FetchingStrategy = () => {
     )
 }
 
+// --- Scene 4: Handshake Process ---
+const HandshakeProcess = () => {
+    const frame = useCurrentFrame();
+    const { fade, move } = useUtil(frame)
+
+    const animations = {
+        sceneWrapper: {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+        },
+        sceneTitle: {
+            color: 'white',
+            fontSize: 60,
+            position: 'absolute',
+            top: 20,
+            left: 20
+        },
+        bgImage: {
+            ...styles.base.container,
+            ...styles.base.bgImageContainer,
+            backgroundImage: `url(${Assets.Pub({}).props.src})`,
+        },
+        hkIcon: {
+            ...styles.HandshakeProcess.hkIcon,
+            ...move({
+                top: {
+                    frameFromTo: [0, 259, 260, 360],
+                    values: [0, 0, 50, 60]
+                },
+                right: {
+                    frameFromTo: [0, 259, 260, 360],
+                    values: [0, 0, 0, 30]
+                },
+                unit: '%'
+            })
+        },
+        downloadIcon: {
+            ...styles.HandshakeProcess.download,
+            ...move({
+                top: {
+                    frameFromTo: [1340, 1360],
+                    values: [30, 50]
+                },
+                unit: '%'
+            }),
+            ...fade({
+                frameFromTo: [1340, 1355, 1410, 1430],
+                values: [0, 1, 1, 0]
+            })
+        },
+        localStorage: {
+            ...styles.HandshakeProcess.localStorage,
+            ...fade({
+                frameFromTo: [980, 990, 1070, 1080],
+                values: [0, 1, 1, 0]
+            })
+        }
+    } satisfies Record<string, CSSProperties>
+
+    return (
+        <Element.SceneHandshakeProcess style={styles.base.container}>
+            <Element.BgImageContainer style={animations.bgImage} />
+            <Element.SceneTitle style={animations.sceneTitle}>Handshake Process</Element.SceneTitle>
+            <Element.SceneWrapper style={animations.sceneWrapper}>
+                <Sequence from={0} name='audio-section' >
+                    <Voice clip="4" />
+                </Sequence>
+
+                <Assets.CdnSoftware style={styles.HandshakeProcess.cdnIcon} />
+
+                <Element.HkIcon style={animations.hkIcon}>
+                    <Show at={[{ from: 261, to: 1227 }, { from: 1431 }]}>
+                        <Oscillator
+                            type="angle" speed={1.5} degree={5} anchorPoint="bottom center"
+                            duration={360}
+                            style={{ width: '100%' }}
+                        >
+                            <Assets.AppIcon />
+                        </Oscillator>
+                    </Show>
+                    <Show at={[{ from: 1228, to: 1430 }]}>
+                        <CameraShake intensity={2} duration={0}>
+                            <Assets.AppIcon />
+                        </CameraShake>
+                    </Show>
+                </Element.HkIcon>
+
+                <Show at={[{ from: 550, to: 729 }, { from: 1100, to: 1200 }]}>
+                    <Assets.Conv style={styles.HandshakeProcess.conv} />
+                </Show>
+                <Show at={[{ from: 730, to: 895 }, { from: 1620 }]}>
+                    <Assets.ConvRev style={styles.HandshakeProcess.conv} />
+                </Show>
+
+                <Show at={[{ from: 550, to: 729 }]}>
+                    <Typewriter
+                        text='Do you'
+                        fromToFrame={[550, 580]}
+                        styles={styles.HandshakeProcess.text}
+                    />
+                    <Typewriter
+                        text='have the stuff?'
+                        fromToFrame={[580, 650]}
+                        styles={styles.HandshakeProcess.nextLine}
+                    />
+                </Show>
+
+                <Show at={[{ from: 730, to: 895 }]}>
+                    <Typewriter
+                        text='Yes, here is v1.2'
+                        fromToFrame={[730, 780]}
+                        styles={{
+                            ...styles.HandshakeProcess.nextLine,
+                            ...styles.HandshakeProcess.singlelineMid
+                        }}
+                    />
+                </Show>
+
+                <Show at={[{ from: 1100, to: 1200 }]}>
+                    <Typewriter
+                        text='I have'
+                        fromToFrame={[1100, 1125]}
+                        styles={styles.HandshakeProcess.text}
+                    />
+                    <Typewriter
+                        text='version 1.1'
+                        fromToFrame={[1125, 1150]}
+                        styles={styles.HandshakeProcess.v1point2}
+                    />
+                </Show>
+
+                <Show at={[{ from: 1651, to: 1770 }]}>
+                    <Element.StaticText style={styles.HandshakeProcess.static}>hey..</Element.StaticText>
+                </Show>
+                <Show at={[{ from: 1771 }]}>
+                    <Element.StaticText style={styles.HandshakeProcess.static}>HEY!!</Element.StaticText>
+                </Show>
+
+                <Show at={[{ from: 1340, to: 1430 }]}>
+                    <Assets.Download style={animations.downloadIcon} />
+                </Show>
+
+                <Show at={[{ from: 980, to: 1070 }]}>
+                    <Assets.LocalStorage style={animations.localStorage} />
+                </Show>
+
+            </Element.SceneWrapper>
+        </Element.SceneHandshakeProcess>
+    )
+}
+
 export const Scenes04Handshake = {
     RecapIntro,
     TheEngine,
-    FetchingStrategy
+    FetchingStrategy,
+    HandshakeProcess
 }
