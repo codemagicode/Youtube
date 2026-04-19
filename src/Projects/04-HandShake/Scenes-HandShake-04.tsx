@@ -1,4 +1,4 @@
-import { interpolateColors, Sequence, useCurrentFrame } from "remotion"
+import { interpolateColors, Sequence, useCurrentFrame, useVideoConfig } from "remotion"
 import { NamedElement as Element, Show } from "../../Shared/Helpers/components"
 import { styles04handshake as styles } from './styles-HandShake-04'
 import { Assets } from "../../Shared/Constants/assets"
@@ -156,7 +156,7 @@ const TheEngine = () => {
                 <Sequence from={30} name='audio-section' >
                     <Voice clip="2" />
                 </Sequence>
-                <SceneryScene videoBrightness={1} sceneryAsset="videos/4-2.mp4" >
+                <SceneryScene videoBrightness={1} sceneryAsset="videos/scene2bgvid.mp4" >
                     <Element.SceneTitle style={styles.scene.title}>The Engine</Element.SceneTitle>
                     <Element.MagiWrapper style={animations.magiWrapper} >
                         <Magi {...charData04.TheEngine} />
@@ -305,7 +305,7 @@ const FetchingStrategy = () => {
                 <Sequence from={0} name='audio-section' >
                     <Voice clip="3" />
                 </Sequence>
-                <SceneryScene sceneryAsset='videos/scene3bgvid.mp4' >
+                <SceneryScene sceneryAsset='videos/4-3.mkv' >
                     <Element.SceneTitle style={styles.scene.title}>Fetching Strategy</Element.SceneTitle>
                     <Element.MagiWrapper style={animations.magiWrapper} >
                         <Magi {...charData04.FetchingStrategy} />
@@ -420,7 +420,7 @@ const HandshakeProcess = () => {
     return (
         <Element.SceneHandshakeProcess style={styles.base.container}>
             <Element.BgImageContainer style={animations.bgImage} />
-            <Element.SceneTitle style={animations.sceneTitle}>Handshake Process</Element.SceneTitle>
+            <Element.SceneTitle style={animations.sceneTitle}>Scene 4: HandshakeProcess</Element.SceneTitle>
             <Element.SceneWrapper style={animations.sceneWrapper}>
                 <Sequence from={0} name='audio-section' >
                     <Voice clip="4" />
@@ -558,7 +558,7 @@ const ContentSource = () => {
             <Sequence from={30} durationInFrames={durationInFrames - 30} >
                 <Voice clip="5" />
             </Sequence>
-            <SceneryScene sceneryAsset='videos/4-5.mp4' blur={20} >
+            <SceneryScene sceneryAsset='videos/4-5.mp4' >
                 <Element.SceneTitle style={styles.scene.title}>Content Source</Element.SceneTitle>
 
                 <Show at={[{ to: 1044 }]}>
@@ -631,6 +631,7 @@ const ContentSource = () => {
     )
 }
 
+// --- Scene 6: Tool Building ---
 const ToolBuilding = () => {
     const frame = useCurrentFrame();
     const { fade, rotate } = useUtil(frame)
@@ -706,11 +707,129 @@ const ToolBuilding = () => {
         </Element.SceneToolBuilding>
     )
 }
+// --- Scene 7: CachingIntro ---
+const CachingIntro = () => {
+    const frame = useCurrentFrame();
+    const { rotate, move, animation, fade } = useUtil(frame)
+    const animations = {
+        magiWrapper: {
+            ...styles.CachingStrategy.magiWrapper,
+            ...move({
+                top: {
+                    frameFromTo: [677, 687, 726, 736],
+                    values: [20, 60, 60, 20]
+                },
+                unit: '%'
+            })
+        },
+        internet: {
+            ...styles.CachingStrategy.internet,
+            ...fade({
+                frameFromTo: [390, 420],
+                values: [1, 0]
+            })
+        },
+        internetSlow: {
+            ...styles.CachingStrategy.internet,
+            ...fade({
+                frameFromTo: [390, 420, 440, 470],
+                values: [0, 1, 1, 0]
+            })
+        },
+        internetCut: {
+            ...styles.CachingStrategy.internet,
+            ...fade({
+                frameFromTo: [440, 470, 570, 600],
+                values: [0, 1, 1, 0]
+            })
+        },
+        giuWrapper: {
+            ...styles.CachingStrategy.giuWrapper,
+            ...rotate({
+                frameFromTo: [580, 630],
+                values: [0, -30]
+            }),
+        },
+        giuWrapper2: {
+            ...styles.CachingStrategy.giuWrapper2,
+        },
+        giuWrapper3: {
+            ...styles.CachingStrategy.giuWrapper3,
+        },
+        slipper: {
+            ...move({
+                right: {
+                    frameFromTo: [660, 800],
+                    values: [6, 97]
+                },
+                unit: '%'
+            }),
+            top: '35%'
+        }
+    } satisfies Record<string, CSSProperties>
+    return (
+        <Element.SceneWrapper>
+            <Voice clip="7" />
+            <SceneryScene sceneryAsset="videos/4-7.mp4" blur={20} >
+                <Element.SceneTitle style={styles.scene.title} >Caching Strategy</Element.SceneTitle>
+                <Element.MagiWrapper style={animations.magiWrapper} >
+                    <Magi {...charData04.CachingIntro} />
+                </Element.MagiWrapper>
+                <Show at={[{ from: 90, to: 250 }]} >
+                    <Motion in={['slide-up', 'fade']} out={['slide-down', 'fade']} inStart={100} outStart={220} >
+                        <Assets.LocalStorage style={styles.CachingStrategy.localStorage} />
+                    </Motion>
+                </Show>
+                <Show at={[{ from: 250, to: 600 }]} >
+                    <FloatingAsset>
+                        <Assets.Internet style={animations.internet} />
+                        <Assets.InternetSlow style={animations.internetSlow} />
+                        <Assets.InternetCut style={animations.internetCut} />
+                    </FloatingAsset>
+                </Show>
+                <Show at={[{ from: 600, to: 630 }]} >
+                    <Element.GiuWrapper style={animations.giuWrapper} >
+                        <Assets.Giu1 />
+                    </Element.GiuWrapper>
+                </Show>
+                <Show at={[{ from: 631, to: 661 }]} >
+                    <Element.GiuWrapper style={{
+                        ...animations.giuWrapper,
+                        ...animations.giuWrapper2
+                    }} >
+                        <Assets.Giu2 />
+                    </Element.GiuWrapper>
+                </Show>
+                <Show at={[{ from: 661, to: 691 }]} >
+                    <Element.GiuWrapper style={{
+                        ...animations.giuWrapper,
+                        ...animations.giuWrapper3
+                    }} >
+                        <Assets.Giu3 />
+                    </Element.GiuWrapper>
+                </Show>
+                <Show at={[{ from: 661, to: 761 }]} >
+                    <Element.Slipper style={animations.slipper} >
+                        <Assets.Slipper style={{
+                            transform: `scaleX(${animation({
+                                frame: frame % 10,
+                                frameFromTo: [0, 5, 10],
+                                values: [-1, 0, 1]
+                            })})`
+                        }} />
+                    </Element.Slipper>
+                </Show>
+            </SceneryScene>
+        </Element.SceneWrapper>
+    );
+}
 
 export const Scenes04Handshake = {
     RecapIntro,
     TheEngine,
     FetchingStrategy,
     HandshakeProcess,
-    ContentSource
+    ContentSource,
+    ToolBuilding,
+    CachingIntro
 }

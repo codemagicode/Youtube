@@ -397,9 +397,14 @@ export const charData04 = {
         }
     },
     CachingIntro: {
-        mouth: [],
+        mouth: [
+            ...speak.let(0), ...speak.talk(62), ...speak.about(73), ...speak.caching(92), ...speak.like(118), ...speak.everyone(146), ...speak.in(177), ...speak.india(194), ...speak.i(218), ...speak.have(244), ...speak.trust(256), ...speak.issues(273), ...speak.with(307), ...speak.the(324), ...speak.internet(333), ...speak.it(385), ...speak.is(402), ...speak.slow(410), ...speak.it(454), ...speak.cuts(469), ...speak.out(482), ...speak.it(532), ...speak.is(546), ...speak.full(554), ...speak.of(566), ...speak.people(577), ...speak.arguing(597), ...speak.like(627), ...speak.my(645), ...speak.girlfriend(660), ...speak.i(686), ...speak.want(723), ...speak.my(736), ...speak.app(752), ...speak.to(770), ...speak.be(782), ...speak.a(793), ...speak.safe(801), ...speak.space(817), ...speak.a(877), ...speak.sanctuary(883),
+        ],
         eyes: [],
-        head: [],
+        head: [
+            { rotation: 0, frame: 0 },
+            { rotation: 0, frame: 1143 },
+        ],
         eyeBrows: {
             left: [
                 { x: 0, y: 0, frame: 0, rotation: 0 },
@@ -419,12 +424,28 @@ export const charData04 = {
             arms: []
         },
         leftLeg: {
-            thighs: [],
-            feet: []
+            thighs: [
+                { frame: 677, degree: 0 },
+                { frame: 687, degree: 90 },
+                { frame: 726, degree: 90 },
+                { frame: 736, degree: 0 }
+            ],
+            feet: [
+                { frame: 677, degree: 0 },
+                { frame: 687, degree: 0 }
+            ]
         },
         rightLeg: {
-            thighs: [],
-            feet: []
+            thighs: [
+                { frame: 677, degree: 0 },
+                { frame: 687, degree: 90 },
+                { frame: 726, degree: 90 },
+                { frame: 736, degree: 0 }
+            ],
+            feet: [
+                { frame: 677, degree: 0 },
+                { frame: 687, degree: 0 }
+            ]
         }
     },
     DataBunker: {

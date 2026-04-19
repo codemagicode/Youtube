@@ -616,11 +616,41 @@ const Voice4Handshake = (props: {clip: string}) => {
     return (<HTML5Audio src={staticFile(assetPath.audioFile(`4-${props.clip}.mp3`))} />)
 }
 
+const Giu1 = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="Giu1" src={staticFile(assetPath.svgFile('giu.svg'))} />)
+}
+
+const Giu2 = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="Giu2" src={staticFile(assetPath.svgFile('giu-2.svg'))} />)
+}
+
+const Giu3 = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="Giu3" src={staticFile(assetPath.svgFile('giu-3.svg'))} />)
+}
+
+const Slipper = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="Slipper" src={staticFile(assetPath.svgFile('slipper.svg'))} />)
+}
+
+const Internet = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="Internet" src={staticFile(assetPath.svgFile('internet.svg'))} />)
+}
+
+const InternetSlow = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="InternetSlow" src={staticFile(assetPath.svgFile('internet-slow.svg'))} />)
+}
+
+const InternetCut = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="InternetCut" src={staticFile(assetPath.svgFile('internet-cut.svg'))} />)
+}
+
 /**
  * Assets
  */
  export const Assets = {
     Voice4Handshake,
+    Giu1, Giu2, Giu3, Slipper,
+    Internet, InternetCut, InternetSlow,
     Scene6Bg,
     JsonFile,
     MaskMeme,

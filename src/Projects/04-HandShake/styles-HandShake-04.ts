@@ -271,7 +271,10 @@ export const styles04handshake = {
       width: '100%'
     },
     clockWrapper: {
-      position: 'relative'
+      position: 'relative',
+      width: '1500px',
+      aspectRatio: 1
+
     },
     maskMeme: {
       width: '1000px'
@@ -287,5 +290,28 @@ export const styles04handshake = {
     jsonFile: {
       width: 300
     }
-  }
+  },
+  CachingStrategy: {
+    magiWrapper: {
+      ...positionAbsolute(undefined, '50%')
+    },
+    giuWrapper: {
+      ...positionAbsolute('20%', '97%'),
+      transformOrigin: 'bottom left'
+    },
+    giuWrapper2: {
+      left: '95%'
+    },
+    giuWrapper3: {
+      left: '94%',
+      scale: 1.05
+    },
+    localStorage: {
+      width: '900px',
+      margin: '10% 20%'
+    },
+    internet: {
+      ...positionAbsolute('10%', '10%')
+    }
+  },
 } satisfies Record<string, Record<string, CSSProperties>>;
