@@ -12,8 +12,16 @@ const assetPath = {
     bgAudioFile: (value: string) => `audios/${value}`,
 }
 
+const Politician = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="Politician" src={staticFile(assetPath.svgFile('politician.svg'))} />)
+}
+
+const JsFramework = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="JsFramework" src={staticFile(assetPath.svgFile('js-framework.svg'))} />)
+}
+
 const AppIcon = (props: Omit<ImgProps, 'src'>) => {
-    return (<Img {...props} data-asset="AppIcon" src={staticFile(assetPath.imgFile('app-icon.png'))} />)
+    return (<Img {...props} data-asset="AppIcon" src={staticFile(assetPath.svgFile('app-icon.svg'))} />)
 }
 
 const JSONIcon = (props: Omit<ImgProps, 'src'>) => {
@@ -132,8 +140,8 @@ const Housefly = (props: Omit<ImgProps, 'src'>) => {
     return (<Img {...props} data-asset="Housefly" src={staticFile(assetPath.imgFile('housefly.jpg'))} />);
 }
 
-const Image = (props: Omit<ImgProps, 'src'>) => {
-    return (<Img {...props} data-asset="Image" src={staticFile(assetPath.imgFile('image.png'))} />);
+const UmsThumbnail = (props: Omit<ImgProps, 'src'>) => {
+    return (<Img {...props} data-asset="Image" src={staticFile(assetPath.imgFile('ums-thumbnail.png'))} />);
 }
 
 const NoHint = (props: Omit<ImgProps, 'src'>) => {
@@ -540,8 +548,8 @@ const Namaste = (props: Omit<ImgProps, 'src'>) => {
     return (<Img {...props} data-asset="Namaste" src={staticFile(assetPath.gifFile('namaste.gif'))} />);
 }
 
-const Voice4Handshake = (props: {index: string} & Omit<AudioProps, 'src'>) => {
-    return (<HTML5Audio {...props} src={staticFile(assetPath.audioFile(`4-${props.index}.mp3`))} />)
+const Voice4Handshake = (props: {clip: string}) => {
+    return (<HTML5Audio src={staticFile(assetPath.audioFile(`4-${props.clip}.mp3`))} />)
 }
 
 /**
@@ -549,6 +557,8 @@ const Voice4Handshake = (props: {index: string} & Omit<AudioProps, 'src'>) => {
  */
  export const Assets = {
     Voice4Handshake,
+    JsFramework,
+    Politician,
     AppIcon,
     JSONIcon,
     KcmsBlueprint2,
@@ -579,7 +589,7 @@ const Voice4Handshake = (props: {index: string} & Omit<AudioProps, 'src'>) => {
     Rocket,
     BrainClipart,
     Housefly,
-    Image,
+    UmsThumbnail,
     NoHint,
     Star,
     Conversation,
