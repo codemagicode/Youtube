@@ -1,4 +1,4 @@
-import { Composition } from "remotion"
+// import { Composition } from "remotion"
 
 //=======USAGE===========
 {/* 

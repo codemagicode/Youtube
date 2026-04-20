@@ -2,6 +2,9 @@
 
 All changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 11. 20 Apr 2026
+- Merged with intial setup
+
 ## 10. 20 Apr 2026
 - 4-7 completed
 - Asset bugs fixed
@@ -36,6 +39,9 @@ All changes to this project will be documented in this file. The format is based
 - Merged Initial setup
 
 ================================================
+
+## 9. 20 Apr 2026
+- Added Safe Asset component to replace with a dic in case of asset failure
 
 ## 8. 19 Apr 2026
 - Updated show children to React node for wider variety
