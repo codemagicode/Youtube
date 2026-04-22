@@ -2,6 +2,9 @@
 
 All changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 13. 22 Apr 2026
+- Merged with inital setup
+
 ## 12. 22 Apr 2026
 - 4-8 complete
 
@@ -42,6 +45,9 @@ All changes to this project will be documented in this file. The format is based
 - Merged Initial setup
 
 ================================================
+
+## 9. 20 Apr 2026
+- Added Safe Asset component to replace with a dic in case of asset failure
 
 ## 9. 20 Apr 2026
 - Added Safe Asset component to replace with a dic in case of asset failure
