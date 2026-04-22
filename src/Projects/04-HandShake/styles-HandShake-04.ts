@@ -314,4 +314,51 @@ export const styles04handshake = {
       ...positionAbsolute('10%', '10%')
     }
   },
+  DataBunker: {
+    sceneContent: {
+      position: 'relative',
+      width: '100%',
+      height: '100%'
+    },
+    appIconWrapper:{
+      ...positionAbsolute('55%','45%')
+    },
+    appIcon: {
+      aspectRatio: 1,
+      width: '500px',
+    },
+    downloadIconWrapper: {
+      ...positionAbsolute('35%','46%')
+    },
+    downloadIcon: {
+      width: '400px'
+    },
+    localStorageWrapper:{
+      ...positionAbsolute('35%', '46%')
+    },
+    lessonWrapper: {
+      ...positionAbsolute('10%', '15%')
+    },
+    pictureWrapper: {
+      ...positionAbsolute('10%', '35%')
+    },
+    audioWrapper: {
+      ...positionAbsolute('5%', '50%')
+    },
+    soulWrapper: {
+      ...positionAbsolute('5%', '70%')
+    },
+    chapterIcon: {
+      width: '500px',
+      height: '500px'
+    },
+    imageIcon: {
+      width: '400px',
+      height: '400px'
+    },
+    audioIcon: {
+      width: '600px',
+      height: '600px'
+    }
+  }
 } satisfies Record<string, Record<string, CSSProperties>>;

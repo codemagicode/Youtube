@@ -642,6 +642,22 @@ const InternetCut = (props: Omit<ImgProps, 'src'>) => {
     return (<SafeAsset component={Img} {...props} data-asset="InternetCut" src={staticFile(assetPath.svgFile('internet-cut.svg'))} />)
 }
 
+const JsonFile = (props: Omit<ImgProps, 'src'>) => {
+    return (<SafeAsset component={Img} {...props} data-asset="InternetCut" src={staticFile(assetPath.svgFile('json-file.svg'))} />)
+}
+
+const Picture = (props: Omit<ImgProps, 'src'>) => {
+    return (<SafeAsset component={Img} {...props} data-asset="InternetCut" src={staticFile(assetPath.svgFile('image-icon.svg'))} />)
+}
+
+const Soul = (props: Omit<ImgProps, 'src'>) => {
+    return (<SafeAsset component={Img} {...props} data-asset="InternetCut" src={staticFile(assetPath.svgFile('soul.svg'))} />)
+}
+
+const Audio = (props: Omit<ImgProps, 'src'>) => {
+    return (<SafeAsset component={Img} {...props} data-asset="InternetCut" src={staticFile(assetPath.svgFile('audio.svg'))} />)
+}
+
 /**
  * Assets
  */
@@ -650,6 +666,8 @@ export const Assets = {
     Scene6Bg, MaskMeme, ClockHand, Clock, Pub, ConvRev, Conv, Download, LocalStorage, CdnSoftware, MetaJsonEnterDoor, MetaJsonDoorClosed, Jsdelivr,
     Github, MoneyChair, Database, Politician, JsFramework, UmsThumbnail,
     Giu1, Giu2, Giu3, Slipper, Internet, InternetSlow, InternetCut,
+    Picture, Soul, Audio,
+    JsonFile,
     AppIcon,
     JSONIcon,
     KcmsBlueprint2,

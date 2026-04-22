@@ -824,6 +824,60 @@ const CachingIntro = () => {
     );
 }
 
+// --- Scene 8: CachingIntro ---
+const DataBunker = () => {
+    return <Element.SceneWrapper>
+        <Voice clip="8" />
+        <SceneryScene sceneryAsset="images/4-8.jpeg" isImage >
+            <Element.SceneTitle style={styles.scene.title} >Data Bunker</Element.SceneTitle>
+            <Element.SceneContent style={styles.DataBunker.sceneContent} >
+                <Element.Saveablepart>
+                    <Element.LessonWrapper style={styles.DataBunker.lessonWrapper} >
+                        <Motion in={['slide-up', 'spring-scale', 'bounce']} out={['slide-down', 'slide-right', 'fade']} inStart={360} outStart={600} >
+                            <Assets.Chapter style={styles.DataBunker.chapterIcon} />
+                        </Motion>
+                    </Element.LessonWrapper>
+                    <Element.PictureWrapper style={styles.DataBunker.pictureWrapper} >
+                        <Motion in={['spring-scale', 'bounce']} out={['slide-down', 'slide-right', 'fade']} inStart={393} outStart={600} >
+                            <Assets.Picture style={styles.DataBunker.imageIcon} />
+                        </Motion>
+                    </Element.PictureWrapper>
+                    <Element.AudioWrapper style={styles.DataBunker.audioWrapper} >
+                        <Motion in={['spring-scale', 'bounce']} out={['slide-down', 'slide-left', 'fade']} inStart={420} outStart={600} >
+                            <Assets.Audio style={styles.DataBunker.audioIcon} />
+                        </Motion>
+                    </Element.AudioWrapper>
+                    <Element.SoulWrapper style={styles.DataBunker.soulWrapper} >
+                        <Motion in={['spring-scale', 'bounce']} out={['slide-down', 'slide-left', 'fade']} inStart={520} outStart={600} >
+                            <Assets.Soul style={styles.DataBunker.audioIcon} />
+                        </Motion>
+                    </Element.SoulWrapper>
+                </Element.Saveablepart>
+                <Element.AppPart>
+                    <Element.DownloadIcon style={styles.DataBunker.downloadIconWrapper} >
+                        <Motion in={['slide-down', 'fade']} out={['slide-down', 'fade']} inStart={222} outStart={282} >
+                            <Assets.Download style={styles.DataBunker.downloadIcon} />
+                        </Motion>
+                    </Element.DownloadIcon>
+                    <Element.LocalStorageWrpper style={styles.DataBunker.localStorageWrapper}>
+                        <Motion in={['bounce', 'fade']} inStart={282} >
+                            <Assets.LocalStorage />
+                        </Motion>
+                    </Element.LocalStorageWrpper>
+                    <Element.AppIconWrapper style={styles.DataBunker.appIconWrapper} >
+                        <Motion in={['spring-scale']} inStart={118} >
+                            <FloatingAsset>
+                                <Assets.AppIcon style={styles.DataBunker.appIcon} />
+                            </FloatingAsset>
+                        </Motion>
+                    </Element.AppIconWrapper>
+                </Element.AppPart>
+
+            </Element.SceneContent>
+        </SceneryScene>
+    </Element.SceneWrapper>
+}
+
 export const Scenes04Handshake = {
     RecapIntro,
     TheEngine,
@@ -831,5 +885,6 @@ export const Scenes04Handshake = {
     HandshakeProcess,
     ContentSource,
     ToolBuilding,
-    CachingIntro
+    CachingIntro,
+    DataBunker
 }
