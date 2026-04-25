@@ -174,7 +174,16 @@ export const Magi = (props: MagiProps) => {
 /** Head component contains mouth, eyes and eybrows, with these face is configured */
 const Head = (props: CommonProps) => {
     const { style } = props
-    const { frame, head } = useAnimationConfig()
+    const { frame, head: headRaw = [] } = useAnimationConfig()
+    const head = headRaw as unknown as HeadMovements[]
+    if (head.length == 0) {
+        head.push(
+            ...[
+                { rotation: 0, frame: 0 },
+                { rotation: 0, frame: 1143 },
+            ]
+        )
+    }
     const arrayMap = useMemo(() => {
         const rotate = [] as number[], frames = [] as number[];
         if (!head.length) {
@@ -217,7 +226,7 @@ const Head = (props: CommonProps) => {
 /** Individual component to manage eye movements */
 const Eyes = (props: CommonProps) => {
     const { style } = props;
-    const { eyes, frame, eyeType = [{ type: 'normal', isEnabled: [0, 0] }] } = useAnimationConfig()
+    const { eyes = [], frame, eyeType = [{ type: 'normal', isEnabled: [0, 0] }] } = useAnimationConfig()
     const frameMap = useMemo(() => eyes.map(c => c.frame), [eyes])
     const mapFor = (key: keyof EyeMovements) => eyes.map(c => clamped(c[key]))
     const topLogical = frameMap.length ? interpolate(frame, frameMap, mapFor('y'), clampEnds()) : 0
@@ -264,8 +273,24 @@ const Eyes = (props: CommonProps) => {
 
 /** Individual component to manage eyebrows */
 const EyeBrows = () => {
-    const { eyeBrows: { left, right }, frame } = useAnimationConfig();
-
+    const empty = [
+        { x: 0, y: 0, frame: 0, rotation: 0 },
+        { x: 0, y: 0, frame: 30, rotation: 0 },
+    ]
+    const { eyeBrows = {left: empty, right: empty}, frame } = useAnimationConfig();
+    const { left, right } = eyeBrows as unknown as EyeBrowsType
+    if (left.length == 0) {
+        left.push(...[
+            { x: 0, y: 0, frame: 0, rotation: 0 },
+            { x: 0, y: 0, frame: 30, rotation: 0 },
+        ])
+    }
+    if (right.length == 0) {
+        right.push(...[
+            { x: 0, y: 0, frame: 0, rotation: 0 },
+            { x: 0, y: 0, frame: 30, rotation: 0 },
+        ])
+    }
     const getUseMemoFor = (configAR: EyeBrowConfig[]) => {
         return useMemo(() => {
             if (!configAR.length) {
@@ -357,7 +382,7 @@ const EyeBrows = () => {
 
 /** Individual component to manage mouth */
 const Mouth = () => {
-    const { mouth, frame } = useAnimationConfig()
+    const { mouth = [], frame } = useAnimationConfig()
     const getTypeFromViseme = (viseme: VisemeType) => {
         let filename = ''
         switch (viseme) {
@@ -423,10 +448,22 @@ const Joints = (props: CommonProps & {
     })
 
     const { frame,
-        leftHand,
-        rightHand,
-        leftLeg,
-        rightLeg
+        leftHand = {
+            shoulder: [],
+            arms: []
+        },
+        rightHand = {
+            shoulder: [],
+            arms: []
+        },
+        leftLeg = {
+            thighs: [],
+            feet: []
+        },
+        rightLeg = {
+            thighs: [],
+            feet: []
+        }
     } = useAnimationConfig()
 
     const getUsememo = (array: JointConfig[]) => {
@@ -632,14 +669,14 @@ type ShoulderConfig = {
 }
 /** Props type for main component */
 type MagiProps = {
-    mouth: MouthConfig[];
-    eyeBrows: EyeBrowsType;
-    eyes: EyeMovements[];
-    head: HeadMovements[];
-    leftHand: LeftHand;
-    rightHand: RightHand;
-    leftLeg: LeftLeg;
-    rightLeg: RightLeg;
+    mouth?: MouthConfig[];
+    eyeBrows?: EyeBrowsType;
+    eyes?: EyeMovements[];
+    head?: HeadMovements[];
+    leftHand?: LeftHand;
+    rightHand?: RightHand;
+    leftLeg?: LeftLeg;
+    rightLeg?: RightLeg;
     shoulders?: ShoulderConfig;
     eyeType?: EyeTypeConfig[];
 }
