@@ -1,8 +1,9 @@
-import { CSSProperties } from 'react';
 import { utils } from '../../Shared/Helpers/utils';
+import { Scenes04Handshake } from './Scenes-HandShake-04';
+import { SceneStyles, FullStyles } from '../../Shared/Types/styles';
 const { positionAbsolute } = utils
 
-export const styles04handshake = {
+const commonStyles = {
   base: {
     container: {
       width: '100%',
@@ -65,6 +66,9 @@ export const styles04handshake = {
       display: 'inline',
     },
   },
+} satisfies FullStyles;
+
+const sceneStyles = {
   RecapIntro: {
     wrapper: { display: 'flex', justifyContent: 'center', alignItems: 'center' },
     magiWrapper: {
@@ -291,7 +295,7 @@ export const styles04handshake = {
       width: 300
     }
   },
-  CachingStrategy: {
+  CachingIntro: {
     magiWrapper: {
       ...positionAbsolute(undefined, '50%')
     },
@@ -360,5 +364,59 @@ export const styles04handshake = {
       width: '600px',
       height: '600px'
     }
+  },
+  ClingyOffline: {
+    magi: {
+      border:'40px solid',
+      boxSizing: 'border-box',
+      borderRadius: '60px',
+    },
+    elevatorDoor1: {
+      backgroundColor: 'lightgray',
+      borderRight: '10px solid',
+      height: '100%', width: '50%',
+      zIndex: 10,
+      ...positionAbsolute(0, 0)
+    },
+    elevatorDoor2: {
+      backgroundColor: 'lightgray',
+      borderLeft: '10px solid',
+      height: '100%', width: '50%',
+      zIndex: 10,
+      ...positionAbsolute(0, undefined, undefined, 0)
+    },
+    bossWrapper: {
+      ...positionAbsolute('17%', '20%')
+    },
+    boss: {
+      width: '1300px'
+    },
+    appWrapper: {
+      width: '500px',
+      ...positionAbsolute('50%', '60%')
+    },
+    jsonFileWrapper: {
+      ...positionAbsolute('49%', '20%')
+    },
+    jsonFile: {
+      width: '500px',
+    },
+    appHand: {
+      fontSize: '300px',
+      display: 'flex',
+      alignItems: 'center',
+      ...positionAbsolute('53%', undefined, undefined, '38%')
+    },
+    appHandlength: {
+      width: '100%',
+      height: '100px',
+      borderRadius: '400px',
+      backgroundColor: 'wheat'
+    }
   }
-} satisfies Record<string, Record<string, CSSProperties>>;
+}  satisfies SceneStyles<typeof Scenes04Handshake>;
+
+export const styles04handshake = {
+  ...commonStyles,
+  ...sceneStyles
+} 

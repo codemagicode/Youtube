@@ -6,7 +6,6 @@ import { useUtil } from "../../Shared/Helpers/utils"
 import { SceneryScene } from "../../Shared/Effects/SceneryScene"
 import { Magi } from "../../Shared/Characters/Magi/Magi"
 import { charData04 } from "./chardata-HandShake-04"
-import { CSSProperties } from "react"
 import { MetallicText } from "../../Shared/Effects/MetallicText"
 import { FloatingAsset } from "../../Shared/Effects/FloatingAsset"
 import { BouncingText } from "../../Shared/Effects/BouncingText"
@@ -16,6 +15,7 @@ import Typewriter from "../../Shared/Effects/Typewriter"
 import { SmokeParticles } from "../../Shared/Effects/SmokeParticles"
 import { sampleJson } from "./accessories-Handshake-04"
 import { Motion } from "../../Shared/Effects/Motion"
+import { Styles } from "../../Shared/Types/styles"
 
 const { Voice4Handshake: Voice } = Assets
 
@@ -65,7 +65,7 @@ const RecapIntro = () => {
                 values: [0, 0.5, 0.5, 0]
             })
         }
-    } satisfies Record<string, CSSProperties>
+    } satisfies Styles
     return (
         <Element.SceneWrapper style={styles.RecapIntro.wrapper}>
             <Sequence from={10} name='audio-section' >
@@ -148,7 +148,7 @@ const TheEngine = () => {
                 values: [0, 1]
             })
         }
-    } satisfies Record<string, CSSProperties>
+    } satisfies Styles
 
     return (
         <Element.SceneTheEngine style={styles.base.container}>
@@ -297,7 +297,7 @@ const FetchingStrategy = () => {
             left: '30.5%',
             top: '18.5%',
         }
-    } satisfies Record<string, CSSProperties>
+    } satisfies Styles
 
     return (
         <Element.SceneFetchingStrategy style={styles.base.container}>
@@ -415,7 +415,7 @@ const HandshakeProcess = () => {
                 values: [0, 1, 1, 0]
             })
         }
-    } satisfies Record<string, CSSProperties>
+    } satisfies Styles
 
     return (
         <Element.SceneHandshakeProcess style={styles.base.container}>
@@ -545,7 +545,7 @@ const ContentSource = () => {
                 values: [1, 0]
             })
         }
-    } satisfies Record<string, CSSProperties>
+    } satisfies Styles
 
     const flashcards = [
         { frameFromTo: [370, 390], color: 'red', rotation: -40, emote: '🐘' },
@@ -653,7 +653,7 @@ const ToolBuilding = () => {
                 values: [0, 360 * 2]
             })
         }
-    } satisfies Record<string, CSSProperties>
+    } satisfies Styles
 
     return (
         <Element.SceneToolBuilding style={styles.base.container}>
@@ -713,7 +713,7 @@ const CachingIntro = () => {
     const { rotate, move, animation, fade } = useUtil(frame)
     const animations = {
         magiWrapper: {
-            ...styles.CachingStrategy.magiWrapper,
+            ...styles.CachingIntro.magiWrapper,
             ...move({
                 top: {
                     frameFromTo: [677, 687, 726, 736],
@@ -723,38 +723,38 @@ const CachingIntro = () => {
             })
         },
         internet: {
-            ...styles.CachingStrategy.internet,
+            ...styles.CachingIntro.internet,
             ...fade({
                 frameFromTo: [390, 420],
                 values: [1, 0]
             })
         },
         internetSlow: {
-            ...styles.CachingStrategy.internet,
+            ...styles.CachingIntro.internet,
             ...fade({
                 frameFromTo: [390, 420, 440, 470],
                 values: [0, 1, 1, 0]
             })
         },
         internetCut: {
-            ...styles.CachingStrategy.internet,
+            ...styles.CachingIntro.internet,
             ...fade({
                 frameFromTo: [440, 470, 570, 600],
                 values: [0, 1, 1, 0]
             })
         },
         giuWrapper: {
-            ...styles.CachingStrategy.giuWrapper,
+            ...styles.CachingIntro.giuWrapper,
             ...rotate({
                 frameFromTo: [580, 630],
                 values: [0, -30]
             }),
         },
         giuWrapper2: {
-            ...styles.CachingStrategy.giuWrapper2,
+            ...styles.CachingIntro.giuWrapper2,
         },
         giuWrapper3: {
-            ...styles.CachingStrategy.giuWrapper3,
+            ...styles.CachingIntro.giuWrapper3,
         },
         slipper: {
             ...move({
@@ -766,7 +766,7 @@ const CachingIntro = () => {
             }),
             top: '35%'
         }
-    } satisfies Record<string, CSSProperties>
+    } satisfies Styles
     return (
         <Element.SceneWrapper>
             <Voice clip="7" />
@@ -777,7 +777,7 @@ const CachingIntro = () => {
                 </Element.MagiWrapper>
                 <Show at={[{ from: 90, to: 250 }]} >
                     <Motion in={['slide-up', 'fade']} out={['slide-down', 'fade']} inStart={100} outStart={220} >
-                        <Assets.LocalStorage style={styles.CachingStrategy.localStorage} />
+                        <Assets.LocalStorage style={styles.CachingIntro.localStorage} />
                     </Motion>
                 </Show>
                 <Show at={[{ from: 250, to: 600 }]} >
@@ -878,7 +878,95 @@ const DataBunker = () => {
     </Element.SceneWrapper>
 }
 
-export const Scenes04Handshake = {
+// --- Scene 9: ClingyOffline ---
+const ClingyOffline = () => {
+    const frame = useCurrentFrame();
+    const { move, animation, zoom } = useUtil(frame)
+
+    const animations = {
+        magi: {
+            ...styles.ClingyOffline.magi,
+            ...move({
+                top: {
+                    frameFromTo: [0, 180, 850, 851],
+                    values: [-70, 15, 15, 100]
+                },
+                left: {
+                    frameFromTo: [850, 851],
+                    values: [60, 35]
+                },
+                unit: '%'
+            }),
+            filter: `greyscale(${animation({ frame, frameFromTo: [0, 10], values: [0, 1] })})`,
+            ...zoom({
+                frameFromTo: [850, 851],
+                values: [1, 4]
+            }),
+            borderColor: interpolateColors(frame, [252, 282], ['lightgrey', 'transparent']),
+            backgroundColor: interpolateColors(frame, [252, 282], ['grey', 'transparent'])
+        },
+        elevatorDoor: {
+            width: `${animation({
+                frame,
+                frameFromTo: [180, 252],
+                values: [50, 0]
+            })}%`,
+            borderColor: interpolateColors(frame, [252, 282], ['grey', 'transparent'])
+        },
+        appHand: {
+            ...styles.ClingyOffline.appHand,
+            width: `${animation({
+                frame,
+                frameFromTo: [530, 600],
+                values: [0, 43]
+            })}%`
+        }
+    } satisfies Styles
+
+    return (
+        <Element.ClingyOfflineScene>
+            <Voice clip="9" />
+            <SceneryScene sceneryAsset="videos/4-9.mkv" >
+                <Show at={[{ from: 530, to: 850 }]}>
+                    <Element.AppHand style={animations.appHand}>
+                        <Element.HandEmoji>
+                            🫲
+                        </Element.HandEmoji>
+                        <Element.HandLength style={styles.ClingyOffline.appHandlength} />
+                    </Element.AppHand>
+                </Show>
+                <Show at={[{ to: 850 }]}>
+                    <Element.AppIconWrapper style={styles.ClingyOffline.appWrapper} >
+                        <Motion in={['slide-left', 'fade']} inStart={465} >
+                            <Assets.AppIcon />
+                        </Motion>
+                    </Element.AppIconWrapper>
+                </Show>
+                <Element.MagiWrapper style={animations.magi} >
+                    <Show at={[{ from: 0, to: 252 }]} >
+                        <Element.ElevatorDoor style={{ ...styles.ClingyOffline.elevatorDoor1, ...animations.elevatorDoor }} />
+                        <Element.ElevatorDoor style={{ ...styles.ClingyOffline.elevatorDoor2, ...animations.elevatorDoor }} />
+                    </Show>
+                    <Magi {...charData04.ClingyOffline} />
+                </Element.MagiWrapper>
+                <Element.BossWrapper style={styles.ClingyOffline.bossWrapper} >
+                    <Motion in={['slide-right', 'fade']} out={['slide-right', 'fade']} inStart={272} outStart={410} >
+                        <Assets.Boss style={styles.ClingyOffline.boss} />
+                    </Motion>
+                </Element.BossWrapper>
+                <Show at={[{ to: 850 }]}>
+                    <Element.JsonFileWrapper style={styles.ClingyOffline.jsonFileWrapper} >
+                        <Motion in={['spring-scale']} inStart={465} >
+                            <Assets.JsonFile style={styles.ClingyOffline.jsonFile} />
+                        </Motion>
+                    </Element.JsonFileWrapper>
+                </Show>
+            </SceneryScene>
+        </Element.ClingyOfflineScene>);
+}
+
+export const Scenes04Handshake =
+{
     RecapIntro,
     TheEngine,
     FetchingStrategy,
@@ -886,5 +974,6 @@ export const Scenes04Handshake = {
     ContentSource,
     ToolBuilding,
     CachingIntro,
-    DataBunker
+    DataBunker,
+    ClingyOffline
 }
