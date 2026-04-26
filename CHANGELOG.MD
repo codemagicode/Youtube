@@ -2,6 +2,9 @@
 
 All changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 14. 26 Apr 2026
+- Merged with initial setup
+
 ## 13. 22 Apr 2026
 - Merged with inital setup
 
@@ -46,8 +49,9 @@ All changes to this project will be documented in this file. The format is based
 
 ================================================
 
-## 9. 20 Apr 2026
-- Added Safe Asset component to replace with a dic in case of asset failure
+## 10. 26 Apr 2026
+- Made all props for character optional
+- Added style type file
 
 ## 9. 20 Apr 2026
 - Added Safe Asset component to replace with a dic in case of asset failure

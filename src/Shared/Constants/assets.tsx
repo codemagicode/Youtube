@@ -1,7 +1,6 @@
 import { Img, ImgProps, staticFile, Html5Video as HTML5Video, Html5Audio as HTML5Audio, RemotionVideoProps as VideoProps } from "remotion";
 import { ComponentProps } from "react";
 import { SafeAsset } from "../Helpers/components";
-import { SafeAsset } from "../Helpers/components";
 
 type AudioProps = ComponentProps<typeof HTML5Audio>
 
