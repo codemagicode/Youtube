@@ -16,6 +16,7 @@ import { SmokeParticles } from "../../Shared/Effects/SmokeParticles"
 import { sampleJson } from "./accessories-Handshake-04"
 import { Motion } from "../../Shared/Effects/Motion"
 import { Styles } from "../../Shared/Types/styles"
+import { SlotMachine } from "../../Shared/Effects/SlotMachine"
 
 const { Voice4Handshake: Voice } = Assets
 
@@ -965,6 +966,81 @@ const ClingyOffline = () => {
         </Element.ClingyOfflineScene>);
 }
 
+// --- Scene 10: RunTimeGenerator ---
+const RunTimeGenerator = () => {
+    const frame = useCurrentFrame();
+    const { animation, rotate } = useUtil(frame)
+    const { fps } = useVideoConfig();
+    const bounceDuration = Math.floor(fps * 0.2);
+    const scaleY = animation({
+        frame: frame % bounceDuration,
+        frameFromTo: [
+            0,
+            bounceDuration * 0.4,
+            bounceDuration * 0.55,
+            bounceDuration,
+        ],
+        values: [1, 1, 0.95, 1]
+    })
+    const animations = {
+        generatorWrapper: {
+            ...styles.RunTimeGenerator.generatorWrapper,
+            transform: `scaleY(${scaleY})`
+        },
+        algorithmWrapper: {
+            ...styles.RunTimeGenerator.algorithmWrapper,
+            height: `${animation({
+                frame,
+                frameFromTo: [290, 350, 500, 560],
+                values: [0, 100, 100, 0]
+            })}%`
+        },
+        tick: {
+            ...styles.RunTimeGenerator.tick,
+            ...rotate({
+                frameFromTo: [0, 290],
+                values: [0, 360 * 3]
+            })
+        }
+    } satisfies Styles
+    return (
+        <Element.SceneWrapper>
+            <Voice clip="10" />
+            <SceneryScene sceneryAsset="images/4-10.jpeg" isImage >
+                <Show at={[{ from: 0, to: 290 }]} >
+                    <Element.GeneratorWrapper style={animations.generatorWrapper} >
+                        <Element.ClockHandWrapper style={styles.RunTimeGenerator.clockhandWrapper} >
+                            <Assets.Generator style={styles.RunTimeGenerator.generator} />
+                            <Assets.ClockHand style={animations.tick} />
+                        </Element.ClockHandWrapper>
+                    </Element.GeneratorWrapper>
+                </Show>
+                <Show at={[{ from: 280, to: 560 }]} >
+                    <Element.AlgorithmWrapper style={animations.algorithmWrapper} >
+                        <Assets.Algorithm style={styles.RunTimeGenerator.algorithm} />
+                    </Element.AlgorithmWrapper>
+                </Show>
+                <Show at={[{ from: 560, to: 760 }]} >
+                    <Element.SlotMachineWrapper style={styles.RunTimeGenerator.slotMachineWrapper} >
+                        <SlotMachine delay={560} scale={2} />
+                        <SlotMachine delay={610} scale={2} />
+                        <SlotMachine delay={660} scale={2} />
+                    </Element.SlotMachineWrapper>
+                </Show>
+                <Show at={[{ from: 760 }]} >
+                    <Element.MartiniWrapper style={styles.RunTimeGenerator.martiniWrapper} >
+                        <Motion in={['spring-scale']} inStart={760}>
+                            <Oscillator type="angle" speed={3} degree={10} >
+                                <Assets.Martini />
+                            </Oscillator>
+                        </Motion>
+                    </Element.MartiniWrapper>
+                </Show>
+            </SceneryScene>
+        </Element.SceneWrapper>
+    );
+}
+
 export const Scenes04Handshake =
 {
     RecapIntro,
@@ -975,5 +1051,6 @@ export const Scenes04Handshake =
     ToolBuilding,
     CachingIntro,
     DataBunker,
-    ClingyOffline
+    ClingyOffline,
+    RunTimeGenerator
 }

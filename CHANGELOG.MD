@@ -2,6 +2,9 @@
 
 All changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 17. 02 may 2026
+- 4-10 complete
+
 ## 16. 02 May 2026
 - Merged with initial setup
 

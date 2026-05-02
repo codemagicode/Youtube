@@ -1,7 +1,7 @@
 import { utils } from '../../Shared/Helpers/utils';
 import { Scenes04Handshake } from './Scenes-HandShake-04';
 import { SceneStyles, FullStyles } from '../../Shared/Types/styles';
-const { positionAbsolute } = utils
+const { positionAbsolute, centerScreen } = utils
 
 const commonStyles = {
   base: {
@@ -324,20 +324,20 @@ const sceneStyles = {
       width: '100%',
       height: '100%'
     },
-    appIconWrapper:{
-      ...positionAbsolute('55%','45%')
+    appIconWrapper: {
+      ...positionAbsolute('55%', '45%')
     },
     appIcon: {
       aspectRatio: 1,
       width: '500px',
     },
     downloadIconWrapper: {
-      ...positionAbsolute('35%','46%')
+      ...positionAbsolute('35%', '46%')
     },
     downloadIcon: {
       width: '400px'
     },
-    localStorageWrapper:{
+    localStorageWrapper: {
       ...positionAbsolute('35%', '46%')
     },
     lessonWrapper: {
@@ -367,7 +367,7 @@ const sceneStyles = {
   },
   ClingyOffline: {
     magi: {
-      border:'40px solid',
+      border: '40px solid',
       boxSizing: 'border-box',
       borderRadius: '60px',
     },
@@ -413,8 +413,41 @@ const sceneStyles = {
       borderRadius: '400px',
       backgroundColor: 'wheat'
     }
+  },
+  RunTimeGenerator: {
+    generatorWrapper: {
+      transformOrigin: "bottom center",
+      ...centerScreen
+    },
+    generator: {
+      width: '1500px'
+    },
+    clockhandWrapper: {
+      position: 'relative',
+      width: '100%',
+      height: '100%'
+    },
+    algorithm: {
+      height: '2050px'
+    },
+    algorithmWrapper: {
+      overflow: 'hidden',
+      ...centerScreen
+    },
+    slotMachineWrapper: {
+      ...centerScreen,
+      display: 'flex',
+      gap: '500px'
+    },
+    tick: {
+      ...positionAbsolute("29%", undefined, undefined, "9%"),
+      width: '500px'
+    },
+    martiniWrapper: {
+      ...centerScreen
+    }
   }
-}  satisfies SceneStyles<typeof Scenes04Handshake>;
+} satisfies SceneStyles<typeof Scenes04Handshake>;
 
 export const styles04handshake = {
   ...commonStyles,
