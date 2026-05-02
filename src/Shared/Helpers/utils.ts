@@ -14,6 +14,14 @@ const positionAbsolute = (
     ...(right !== undefined && { right }),
   });
 
+  const centerScreen: CSSProperties = {
+    position: 'absolute',
+    inset: 0,
+    margin: 'auto',
+    width: 'max-content',
+    height: 'max-content'
+  }
+
 export const useUtil = (frame: number) => {
   const animation = (
     params: {
@@ -80,7 +88,8 @@ export const useUtil = (frame: number) => {
 }
 
 export const utils = {
-  positionAbsolute
+  positionAbsolute,
+  centerScreen,
 }
 
 type FrameValueMapper = {

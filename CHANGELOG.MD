@@ -2,6 +2,9 @@
 
 All changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 16. 02 May 2026
+- Merged with initial setup
+
 ## 15. 26 Apr 2026
 - 4-9 complete
 
@@ -51,6 +54,9 @@ All changes to this project will be documented in this file. The format is based
 - Merged Initial setup
 
 ================================================
+
+## 11. 02 May 2026
+- Added center screen util
 
 ## 10. 26 Apr 2026
 - Made all props for character optional
