@@ -157,7 +157,7 @@ const TheEngine = () => {
                 <Sequence from={30} name='audio-section' >
                     <Voice clip="2" />
                 </Sequence>
-                <SceneryScene videoBrightness={1} sceneryAsset="videos/scene2bgvid.mp4" >
+                <SceneryScene videoBrightness={1} sceneryAsset="videos/4-2.mp4" >
                     <Element.SceneTitle style={styles.scene.title}>The Engine</Element.SceneTitle>
                     <Element.MagiWrapper style={animations.magiWrapper} >
                         <Magi {...charData04.TheEngine} />
@@ -1041,6 +1041,141 @@ const RunTimeGenerator = () => {
     );
 }
 
+const QuizLogic = () => {
+    const frame = useCurrentFrame();
+    const { move } = useUtil(frame)
+    const scaleY = frame > 195 && frame < 370 ? '-1' : "1"
+    const options = [580, 600]
+    const animations = {
+        magiWrapper: {
+            ...styles.QuizLogic.magiWrapper,
+            transform: `scaleX(${scaleY})`
+        },
+        brain: {
+            ...styles.QuizLogic.brain,
+            ...move({
+                unit: '%',
+                left: {
+                    frameFromTo: [800, 820, 840, 850],
+                    values: [46, 40, 40, -10]
+                }
+            })
+        },
+        wordContainer1: {
+            ...styles.QuizLogic.wordContainer,
+            ...move({
+                unit: '%',
+                top: {
+                    frameFromTo: options,
+                    values: [20, 60]
+                },
+                left: {
+                    frameFromTo: options,
+                    values: [15, 75]
+                }
+            })
+        },
+        wordContainer2: {
+            ...styles.QuizLogic.wordContainer,
+            ...move({
+                unit: '%',
+                top: {
+                    frameFromTo: options,
+                    values: [60, 20]
+                },
+                left: {
+                    frameFromTo: options,
+                    values: [15, 75]
+                }
+            })
+        },
+        wordContainer3: {
+            ...styles.QuizLogic.wordContainer,
+            ...move({
+                unit: '%',
+                top: {
+                    frameFromTo: options,
+                    values: [20, 60]
+                },
+                left: {
+                    frameFromTo: options,
+                    values: [75, 15]
+                }
+            })
+        },
+        wordContainer4: {
+            ...styles.QuizLogic.wordContainer,
+            ...move({
+                unit: '%',
+                top: {
+                    frameFromTo: options,
+                    values: [60, 20]
+                },
+                left: {
+                    frameFromTo: options,
+                    values: [75, 15]
+                }
+            })
+        }
+    } satisfies Styles
+    return (
+        <Element.SceneWrapper>
+            <Voice clip="11" />
+            <SceneryScene sceneryAsset="videos/4-11.mp4" >
+                <Show at={[{ from: 800, to: 870 }]} >
+                    <Assets.BrainClipart style={animations.brain} />
+                </Show>
+                <Element.magiWrapper style={animations.magiWrapper} >
+                    <Magi {...charData04.QuizLogic} />
+                </Element.magiWrapper>
+                <Show at={[{ from: 0, to: 230 }]} >
+                    <Element.TranslateWordContainer style={styles.QuizLogic.translateWordContainer} >
+                        <Motion in={['spring-scale']} out={['fade']} inStart={0} outStart={130} >
+                            <Element.Tword style={styles.QuizLogic.tword} >You</Element.Tword>
+                        </Motion>
+                        <Motion in={['fade']} out={['slide-down', 'fade']} inStart={130} outStart={200}>
+                            <Element.Tword style={styles.QuizLogic.tword} >ನೀವು</Element.Tword>
+                        </Motion>
+                    </Element.TranslateWordContainer>
+                </Show>
+                <Show at={[{from: 195, to: 400}]} >
+                    <Typewriter text="ನೀವು ಹೇಗಿದ್ದೀರಿ?" styles={styles.QuizLogic.typeWriter} fromToFrame={[195, 225]}  exitFromToFrame={[370, 400]}/>
+                </Show>
+                <Show at={[{from: 400, to: 750}]} >
+                    <Element.Word1Container style={animations.wordContainer1} >
+                        <Motion in={['slide-up', 'fade']} out={['fade']} outStart={700} inStart={400} >
+                            <Element.Word>
+                                ಆಯ್ಕೆ 1
+                            </Element.Word>
+                        </Motion>
+                    </Element.Word1Container>
+                    <Element.Word2Container style={animations.wordContainer2} >
+                        <Motion in={['slide-up', 'fade']} out={['fade']} outStart={710} inStart={410} >
+                            <Element.Word>
+                                ಆಯ್ಕೆ 2
+                            </Element.Word>
+                        </Motion>
+                    </Element.Word2Container>
+                    <Element.Word3Container style={animations.wordContainer3} >
+                        <Motion in={['slide-up', 'fade']} out={['fade']} outStart={720} inStart={420} >
+                            <Element.Word>
+                                ಆಯ್ಕೆ 3
+                            </Element.Word>
+                        </Motion>
+                    </Element.Word3Container>
+                    <Element.Word4Container style={animations.wordContainer4} >
+                        <Motion in={['slide-up', 'fade']} out={['fade']} outStart={730} inStart={430} >
+                            <Element.Word>
+                                ಆಯ್ಕೆ 4
+                            </Element.Word>
+                        </Motion>
+                    </Element.Word4Container>
+                </Show>
+            </SceneryScene>
+        </Element.SceneWrapper>
+    )
+}
+
 export const Scenes04Handshake =
 {
     RecapIntro,
@@ -1052,5 +1187,6 @@ export const Scenes04Handshake =
     CachingIntro,
     DataBunker,
     ClingyOffline,
-    RunTimeGenerator
+    RunTimeGenerator,
+    QuizLogic
 }

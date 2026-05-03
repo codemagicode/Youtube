@@ -446,6 +446,31 @@ const sceneStyles = {
     martiniWrapper: {
       ...centerScreen
     }
+  },
+  QuizLogic: {
+    magiWrapper: {
+      ...centerScreen
+    },
+    brain: {
+      width: '200px',
+      top: '20%'
+    },
+    translateWordContainer: {
+      color: 'white',
+      fontSize: '150px',
+      ...positionAbsolute('15%', '15%')
+    },
+    tword: {
+      ...positionAbsolute('0', '0')
+    },
+    typeWriter: {
+      ...positionAbsolute('-25%', '30%'),
+      fontSize: '150px'
+    },
+    wordContainer:{
+      color: 'white',
+      fontSize: '150px'
+    }
   }
 } satisfies SceneStyles<typeof Scenes04Handshake>;
 
