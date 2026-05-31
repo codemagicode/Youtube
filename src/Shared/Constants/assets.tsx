@@ -1,6 +1,7 @@
 import { Img, ImgProps, staticFile, Html5Video as HTML5Video, Html5Audio as HTML5Audio, RemotionVideoProps as VideoProps } from "remotion";
 import { ComponentProps } from "react";
 import { SafeAsset } from "../Helpers/components";
+import { Gif } from "@remotion/gif";
 
 type AudioProps = ComponentProps<typeof HTML5Audio>
 
@@ -577,6 +578,10 @@ const BuildApp = (props: Omit<ImgProps, 'src'>) => {
     return (<SafeAsset component={Img} {...props} data-asset="BuildApp" src={staticFile(assetPath.gifFile('build-app.gif'))} />);
 }
 
+const BombExplosion = (props: Omit<ImgProps, 'src'>) => {
+    return (<SafeAsset component={Img} {...props} data-asset="BombExplosion" src={staticFile(assetPath.gifFile('bomb-explosion.webp'))} />);
+}
+
 const Ensure = (props: Omit<ImgProps, 'src'>) => {
     return (<SafeAsset component={Img} {...props} data-asset="Ensure" src={staticFile(assetPath.gifFile('Ensure.gif'))} />);
 }
@@ -674,11 +679,19 @@ const Algorithm = (props: Omit<ImgProps, 'src'>) => {
     return (<SafeAsset component={Img} {...props} data-asset="Algorithm" src={staticFile(assetPath.svgFile('algorithm.svg'))} />)
 }
 
+const CatoonBombSound = (props: Omit<AudioProps, 'src'>) => {
+    return (<SafeAsset component={HTML5Audio} {...props} data-asset="CartoonBombSound" src={staticFile(assetPath.audioFile('cartoon-bomb-explosion.mp3'))} />);
+}
+
+const Fah = (props: Omit<AudioProps, 'src'>) => {
+    return (<SafeAsset component={HTML5Audio} {...props} data-asset="CartoonBombSound" src={staticFile(assetPath.audioFile('fah.mp3'))} />);
+}
+
 /**
  * Assets
  */
 export const Assets = {
-    Voice4Handshake,
+    Voice4Handshake, CatoonBombSound, Fah,
     Scene6Bg, MaskMeme, ClockHand, Clock, Pub, ConvRev, Conv, Download, LocalStorage, CdnSoftware, MetaJsonEnterDoor, MetaJsonDoorClosed, Jsdelivr,
     Github, MoneyChair, Database, Politician, JsFramework, UmsThumbnail,
     Giu1, Giu2, Giu3, Slipper, Internet, InternetSlow, InternetCut,
@@ -808,6 +821,7 @@ export const Assets = {
     MarioSmallStand,
     Quiz,
     BuildApp,
+    BombExplosion,
     Ensure,
     HiWavingEmoji,
     Kannada,

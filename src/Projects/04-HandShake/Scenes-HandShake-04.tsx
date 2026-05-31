@@ -17,6 +17,7 @@ import { sampleJson } from "./accessories-Handshake-04"
 import { Motion } from "../../Shared/Effects/Motion"
 import { Styles } from "../../Shared/Types/styles"
 import { SlotMachine } from "../../Shared/Effects/SlotMachine"
+import { useMemo } from "react"
 
 const { Voice4Handshake: Voice } = Assets
 
@@ -421,7 +422,7 @@ const HandshakeProcess = () => {
     return (
         <Element.SceneHandshakeProcess style={styles.base.container}>
             <Element.BgImageContainer style={animations.bgImage} />
-            <Element.SceneTitle style={animations.sceneTitle}>Scene 4: HandshakeProcess</Element.SceneTitle>
+            <Element.SceneTitle style={animations.sceneTitle}>Handshake process</Element.SceneTitle>
             <Element.SceneWrapper style={animations.sceneWrapper}>
                 <Sequence from={0} name='audio-section' >
                     <Voice clip="4" />
@@ -516,13 +517,25 @@ const ContentSource = () => {
     const { durationInFrames } = useVideoConfig();
     const { fade, rotate } = useUtil(frame)
 
-    const sample = sampleJson();
-    const json1 = sample[0].substring(0, Math.max(0, (frame - 470) * 2));
-    const json2 = sample[1].substring(0, Math.max(0, (frame - 500) * 2));
-    const json3 = sample[2].substring(0, Math.max(0, (frame - 530) * 2));
+    const sample = useMemo(() => {
+        return sampleJson()
+    }, []);
+    const json1 = useMemo(() => {
+        if (frame < 470 || frame > 1050) return '';
+        return sample[0].substring(0, Math.max(0, (frame - 470) * 2))
+    }, [frame, sample])
+    const json2 = useMemo(() => {
+        if (frame < 470 || frame > 1050) return '';
+        return sample[1].substring(0, Math.max(0, (frame - 500) * 2))
+    }, [frame, sample])
+    const json3 = useMemo(() => {
+        if (frame < 470 || frame > 1050) return '';
+        return sample[2].substring(0, Math.max(0, (frame - 530) * 2))
+    }, [frame, sample])
 
     const condition = frame > 1380 && frame <= 1450;
 
+const voice = useMemo(() => <Voice clip="5" />, []);
     const animations = {
         magiWrapper1: {
             ...styles.ContentSource.magiWrapper,
@@ -557,7 +570,7 @@ const ContentSource = () => {
     return (
         <Element.SceneContentSource style={styles.base.container}>
             <Sequence from={30} durationInFrames={durationInFrames - 30} >
-                <Voice clip="5" />
+                {voice}
             </Sequence>
             <SceneryScene sceneryAsset='videos/4-5.mp4' >
                 <Element.SceneTitle style={styles.scene.title}>Content Source</Element.SceneTitle>
@@ -928,6 +941,7 @@ const ClingyOffline = () => {
         <Element.ClingyOfflineScene>
             <Voice clip="9" />
             <SceneryScene sceneryAsset="videos/4-9.mkv" >
+                <Element.SceneTitle style={styles.scene.title} >Clingy offline</Element.SceneTitle>
                 <Show at={[{ from: 530, to: 850 }]}>
                     <Element.AppHand style={animations.appHand}>
                         <Element.HandEmoji>
@@ -1007,6 +1021,7 @@ const RunTimeGenerator = () => {
         <Element.SceneWrapper>
             <Voice clip="10" />
             <SceneryScene sceneryAsset="images/4-10.jpeg" isImage >
+                <Element.SceneTitle style={styles.scene.title} >Run time generator</Element.SceneTitle>
                 <Show at={[{ from: 0, to: 290 }]} >
                     <Element.GeneratorWrapper style={animations.generatorWrapper} >
                         <Element.ClockHandWrapper style={styles.RunTimeGenerator.clockhandWrapper} >
@@ -1122,6 +1137,7 @@ const QuizLogic = () => {
         <Element.SceneWrapper>
             <Voice clip="11" />
             <SceneryScene sceneryAsset="videos/4-11.mp4" >
+                <Element.SceneTitle style={styles.scene.title} >Quiz Logic</Element.SceneTitle>
                 <Show at={[{ from: 800, to: 870 }]} >
                     <Assets.BrainClipart style={animations.brain} />
                 </Show>
@@ -1138,10 +1154,10 @@ const QuizLogic = () => {
                         </Motion>
                     </Element.TranslateWordContainer>
                 </Show>
-                <Show at={[{from: 195, to: 400}]} >
-                    <Typewriter text="ನೀವು ಹೇಗಿದ್ದೀರಿ?" styles={styles.QuizLogic.typeWriter} fromToFrame={[195, 225]}  exitFromToFrame={[370, 400]}/>
+                <Show at={[{ from: 195, to: 400 }]} >
+                    <Typewriter text="ನೀವು ಹೇಗಿದ್ದೀರಿ?" styles={styles.QuizLogic.typeWriter} fromToFrame={[195, 225]} exitFromToFrame={[370, 400]} />
                 </Show>
-                <Show at={[{from: 400, to: 750}]} >
+                <Show at={[{ from: 400, to: 750 }]} >
                     <Element.Word1Container style={animations.wordContainer1} >
                         <Motion in={['slide-up', 'fade']} out={['fade']} outStart={700} inStart={400} >
                             <Element.Word>
@@ -1176,6 +1192,109 @@ const QuizLogic = () => {
     )
 }
 
+const SummaryOutro = () => {
+    const frame = useCurrentFrame()
+    const { move, animation, zoom, fade } = useUtil(frame)
+    const { durationInFrames } = useVideoConfig()
+    const animations = {
+        slipper: {
+            ...move({
+                right: {
+                    frameFromTo: [1890, 1910],
+                    values: [100, 50]
+                },
+                unit: '%'
+            }),
+            top: '35%'
+        },
+        bomb: {
+            ...styles.SummaryOutro.bomb,
+            ...zoom({
+                frameFromTo: [1910, 1920],
+                values: [1, 10]
+            }),
+            ...fade({
+                frameFromTo: [1920, 1930],
+                values: [1, 0]
+            })
+        },
+        jsonFile: {
+            ...zoom({
+                values: [7, 8],
+                frameFromTo: [1072, 1167]
+            }),
+            ...fade({
+                frameFromTo: [1072, 1082, 1157, 1167],
+                values: [0, 0.5, 0.5, 0]
+            })
+        },
+        sceneEnd: {
+            ...fade({
+                frameFromTo: [1920, durationInFrames],
+                values: [1, 0]
+            })
+        }
+    } satisfies Styles
+    if (frame > 1920) {
+        return <></>
+    }
+    return (
+        <Element.SceneWrapper style={animations.sceneEnd} >
+            <Voice clip="12" />
+            <Sequence from={1860}>
+                <Assets.CatoonBombSound volume={0.5} />
+            </Sequence>
+            <SceneryScene sceneryAsset="videos/4-12.mp4" >
+                <Element.SceneTitle style={styles.scene.title} >Summary</Element.SceneTitle>
+                <Element.JSONWrapper style={styles.SummaryOutro.jsonWrapper} >
+                    <Assets.JsonFile style={animations.jsonFile} />
+                </Element.JSONWrapper>
+                <Element.MagiWrapper style={styles.SummaryOutro.magiWrapper} >
+                    <Magi {...charData04.SummaryOutro} />
+                </Element.MagiWrapper>
+                <Show at={[{ from: 1890, }]} >
+                    <Element.Slipper style={animations.slipper} >
+                        <Assets.Slipper style={{
+                            transform: `scaleX(${animation({
+                                frame: frame % 10,
+                                frameFromTo: [0, 5, 10],
+                                values: [-1, 0, 1]
+                            })})`
+                        }} />
+                    </Element.Slipper>
+                </Show>
+                <Show at={[{ from: 1910 }]} >
+                    <Assets.BombExplosion style={animations.bomb} />
+                </Show>
+                <Show at={[{ from: 0 }]} >
+                    <Element.EmojiWrapper style={styles.SummaryOutro.emoji} >
+                        <Motion in={['spring-scale']} inStart={150} out={['slide-down', 'fade']} outStart={960} >
+                            <Element.Emoji>
+                                🤝
+                            </Element.Emoji>
+                        </Motion>
+                    </Element.EmojiWrapper>
+                    <Element.GeneratorWrapper style={styles.SummaryOutro.generator} >
+                        <Motion in={['spring-scale']} inStart={390} out={['slide-down', 'fade']} outStart={970} >
+                            <Assets.Generator />
+                        </Motion>
+                    </Element.GeneratorWrapper>
+                    <Element.LocalStorageWrapper style={styles.SummaryOutro.localStorage} >
+                        <Motion in={['spring-scale']} inStart={660} out={['slide-down', 'fade']} outStart={980} >
+                            <Assets.LocalStorage />
+                        </Motion>
+                    </Element.LocalStorageWrapper>
+                    <Element.SlotMachine style={styles.SummaryOutro.slotmachine} >
+                        <Motion in={['spring-scale']} inStart={775} out={['slide-down', 'fade']} outStart={990} >
+                            <SlotMachine scale={2} delay={775} />
+                        </Motion>
+                    </Element.SlotMachine>
+                </Show>
+            </SceneryScene>
+        </Element.SceneWrapper>
+    )
+}
+
 export const Scenes04Handshake =
 {
     RecapIntro,
@@ -1188,5 +1307,6 @@ export const Scenes04Handshake =
     DataBunker,
     ClingyOffline,
     RunTimeGenerator,
-    QuizLogic
+    QuizLogic,
+    SummaryOutro
 }

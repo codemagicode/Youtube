@@ -1,6 +1,7 @@
 import { utils } from '../../Shared/Helpers/utils';
 import { Scenes04Handshake } from './Scenes-HandShake-04';
 import { SceneStyles, FullStyles } from '../../Shared/Types/styles';
+import { SlotMachine } from '../../Shared/Effects/SlotMachine';
 const { positionAbsolute, centerScreen } = utils
 
 const commonStyles = {
@@ -471,6 +472,32 @@ const sceneStyles = {
       color: 'white',
       fontSize: '150px'
     }
+  },
+  SummaryOutro: {
+    magiWrapper: {
+      ...centerScreen
+    },
+    bomb: {
+      ...centerScreen,
+      width: '800px'
+    },
+    emoji: {
+      fontSize: '300px',
+      ...positionAbsolute('10%', '10%')
+    },
+    generator: {
+      width: '500px',
+      ...positionAbsolute('40%', '5%')
+    },
+    localStorage: {
+      ...positionAbsolute('10%', '70%')
+    },
+    slotmachine: {
+      ...positionAbsolute('60%', '70%')
+    },
+    jsonWrapper: {
+      ...centerScreen,
+    },
   }
 } satisfies SceneStyles<typeof Scenes04Handshake>;
 

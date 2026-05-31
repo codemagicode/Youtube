@@ -2,6 +2,10 @@
 
 All changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 19. 31 May 2026
+- 4-12 complete with setup
+- Temp repo clean
+
 ## 18. 03 May 2026
 - 4-11 complete
 

@@ -818,6 +818,13 @@ const empty = (from: number): MouthType[] => {
   ]
 }
 
+const end = (from: number): MouthType[] => {
+  return [
+    { viseme: 'a', frame: from + 0 },
+    { viseme: 'n', frame: from + 5 },
+  ]
+}
+
 const engine = (from: number): MouthType[] => {
   return [
     { viseme: 'a', frame: from + 0 },
@@ -3237,6 +3244,8 @@ export const speak = {
   elevator,
   /** duration: 15 */
   empty,
+  /** duration: 5 */
+  end,
   /** duration: 25 */
   engine,
   /** duration: 45 */
