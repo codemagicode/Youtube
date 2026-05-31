@@ -1,6 +1,7 @@
 import { Img, ImgProps, staticFile, Html5Video as HTML5Video, Html5Audio as HTML5Audio, RemotionVideoProps as VideoProps } from "remotion";
 import { ComponentProps } from "react";
 import { SafeAsset } from "../Helpers/components";
+import { Gif } from "@remotion/gif";
 
 type AudioProps = ComponentProps<typeof HTML5Audio>
 
@@ -581,6 +582,10 @@ const BuildApp = (props: Omit<ImgProps, 'src'>) => {
     return (<SafeAsset component={Img} {...props} data-asset="BuildApp" src={staticFile(assetPath.gifFile('build-app.gif'))} />);
 }
 
+const BombExplosion = (props: Omit<ImgProps, 'src'>) => {
+    return (<SafeAsset component={Img} {...props} data-asset="BombExplosion" src={staticFile(assetPath.gifFile('bomb-explosion.webp'))} />);
+}
+
 const Ensure = (props: Omit<ImgProps, 'src'>) => {
     return (<SafeAsset component={Img} {...props} data-asset="Ensure" src={staticFile(assetPath.gifFile('Ensure.gif'))} />);
 }
@@ -646,11 +651,51 @@ const InternetCut = (props: Omit<ImgProps, 'src'>) => {
     return (<SafeAsset component={Img} {...props} data-asset="InternetCut" src={staticFile(assetPath.svgFile('internet-cut.svg'))} />)
 }
 
+const JsonFile = (props: Omit<ImgProps, 'src'>) => {
+    return (<SafeAsset component={Img} {...props} data-asset="JsonFile" src={staticFile(assetPath.svgFile('json-file.svg'))} />)
+}
+
+const Picture = (props: Omit<ImgProps, 'src'>) => {
+    return (<SafeAsset component={Img} {...props} data-asset="Picture" src={staticFile(assetPath.svgFile('image-icon.svg'))} />)
+}
+
+const Soul = (props: Omit<ImgProps, 'src'>) => {
+    return (<SafeAsset component={Img} {...props} data-asset="Soul" src={staticFile(assetPath.svgFile('soul.svg'))} />)
+}
+
+const Audio = (props: Omit<ImgProps, 'src'>) => {
+    return (<SafeAsset component={Img} {...props} data-asset="Audio" src={staticFile(assetPath.svgFile('audio.svg'))} />)
+}
+
+const Boss = (props: Omit<ImgProps, 'src'>) => {
+    return (<SafeAsset component={Img} {...props} data-asset="Boss" src={staticFile(assetPath.svgFile('boss.svg'))} />)
+}
+
+const Generator = (props: Omit<ImgProps, 'src'>) => {
+    return (<SafeAsset component={Img} {...props} data-asset="Generator" src={staticFile(assetPath.svgFile('generator.svg'))} />)
+}
+
+const Martini = (props: Omit<ImgProps, 'src'>) => {
+    return (<SafeAsset component={Img} {...props} data-asset="Martini" src={staticFile(assetPath.svgFile('martini.svg'))} />)
+}
+
+const Algorithm = (props: Omit<ImgProps, 'src'>) => {
+    return (<SafeAsset component={Img} {...props} data-asset="Algorithm" src={staticFile(assetPath.svgFile('algorithm.svg'))} />)
+}
+
+const CatoonBombSound = (props: Omit<AudioProps, 'src'>) => {
+    return (<SafeAsset component={HTML5Audio} {...props} data-asset="CartoonBombSound" src={staticFile(assetPath.audioFile('cartoon-bomb-explosion.mp3'))} />);
+}
+
+const Fah = (props: Omit<AudioProps, 'src'>) => {
+    return (<SafeAsset component={HTML5Audio} {...props} data-asset="CartoonBombSound" src={staticFile(assetPath.audioFile('fah.mp3'))} />);
+}
+
 /**
  * Assets
  */
 export const Assets = {
-    Voice4Handshake,
+    Voice4Handshake, CatoonBombSound, Fah,
     Scene6Bg, MaskMeme, ClockHand, Clock, Pub, ConvRev, Conv, Download, LocalStorage, CdnSoftware, MetaJsonEnterDoor, MetaJsonDoorClosed, Jsdelivr,
     Github, MoneyChair, Database, Politician, JsFramework, UmsThumbnail,
     Giu1, Giu2, Giu3, Slipper, Internet, InternetSlow, InternetCut,
@@ -777,6 +822,7 @@ export const Assets = {
     MarioSmallStand,
     Quiz,
     BuildApp,
+    BombExplosion,
     Ensure,
     HiWavingEmoji,
     Kannada,

@@ -1,6 +1,8 @@
 import { CSSProperties } from "react"
 import { NamedElement as E } from "../Helpers/components"
-import { utils } from "../Helpers/utils"
+import { useUtil, utils } from "../Helpers/utils"
+import { Sequence, useCurrentFrame } from "remotion"
+import { Assets } from "../Constants/assets"
 
 export const Outro = () => {
     const spanStyle: CSSProperties = {
@@ -8,6 +10,8 @@ export const Outro = () => {
         alignItems: 'center',
         gap: '50px'
     }
+    const frame = useCurrentFrame()
+    const { fade } = useUtil(frame)
     return <E.OutroComponent style={{
         fontFamily: 'Montserrat',
         display: 'flex',
@@ -18,12 +22,15 @@ export const Outro = () => {
         backgroundColor: 'black',
         width: '100%',
         height: '100%',
-        ...utils.fade({
+        ...fade({
             frameFromTo: [0, 60],
             values: [0, 1]
         }),
         textAlign: 'center'
     }} >
+        <Sequence >
+            <Assets.Fah />
+        </Sequence>
         <E.CuNextTime style={{
             textTransform: 'capitalize',
             fontSize: '100px'

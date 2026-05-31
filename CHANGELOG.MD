@@ -2,6 +2,13 @@
 
 All changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 12. 31 may 2026
+- Added word to words file
+- Added assets
+- Updated Outro
+- Added render video exec for smaller render
+- Added models
+
 ## 11. 02 May 2026
 - Added center screen util
 
