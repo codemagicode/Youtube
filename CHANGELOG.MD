@@ -2,6 +2,9 @@
 
 All changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 20. 31 May 2026
+- Merged with config
+
 ## 19. 31 May 2026
 - 4-12 complete with setup
 - Temp repo clean
@@ -64,6 +67,13 @@ All changes to this project will be documented in this file. The format is based
 - Merged Initial setup
 
 ================================================
+
+## 12. 31 may 2026
+- Added word to words file
+- Added assets
+- Updated Outro
+- Added render video exec for smaller render
+- Added models
 
 ## 11. 02 May 2026
 - Added center screen util
