@@ -19,7 +19,7 @@ echo "Targeting Public Directory: $PUBLIC_DIR"
 cd "$PUBLIC_DIR" || exit
 
 # List of folders to ensure existence
-FOLDERS=("audios" "gifs" "images" "svgs" "videos" "audacity")
+FOLDERS=("audios" "gifs" "images" "svgs" "videos" "audacity" "lottie")
 
 echo "Checking/Creating folders..."
 for folder in "${FOLDERS[@]}"; do

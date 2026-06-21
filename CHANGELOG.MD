@@ -2,6 +2,15 @@
 
 All changes to this project will be documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 13. 21 Jun 2026
+- Added words to words file
+- Added assets
+- Added ElevatedVideoScreen, Mandala effects for backgrounds
+- Updated GlassPane, HoloShield, SlotMachine effects
+- Updated SafeAsset helper
+- Updated Intro
+- Updated organize files exec to take lottie
+
 ## 12. 31 may 2026
 - Added word to words file
 - Added assets

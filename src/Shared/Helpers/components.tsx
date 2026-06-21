@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { Gif } from "@remotion/gif";
+import { DetailedHTMLProps, HTMLAttributes, useState } from "react";
 import { Html5Audio, Html5Video, Img, useCurrentFrame } from "remotion";
 
 //===================================================
@@ -69,7 +70,7 @@ export const SafeAsset = (props: SafeAssetProps) => {
   const [error, setError] = useState(false);
 
   if (error) {
-    const newRest = rest as unknown as HTMLDivElement
+    const newRest = rest as unknown as DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
     return <div {...newRest} />;
   }
 
@@ -77,6 +78,6 @@ export const SafeAsset = (props: SafeAssetProps) => {
 };
 
 type SafeAssetProps = {
-  component: typeof Img | typeof Html5Video | typeof Html5Audio;
+  component: typeof Img | typeof Html5Video | typeof Html5Audio | typeof Gif;
   src: string;
 }

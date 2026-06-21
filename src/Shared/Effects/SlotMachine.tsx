@@ -1,7 +1,7 @@
 import React from 'react';
 import { useCurrentFrame, interpolate, Easing } from 'remotion';
 
-export const SlotMachine: React.FC<{ delay?: number }> = ({ delay = 0 }) => {
+export const SlotMachine: React.FC<{ delay?: number, scale?: number }> = ({ delay = 0, scale = 1 }) => {
     const frame = useCurrentFrame();
     const f = Math.max(0, frame - delay);
 
@@ -45,6 +45,7 @@ export const SlotMachine: React.FC<{ delay?: number }> = ({ delay = 0 }) => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            scale
         }}>
             {/* Target Marker Overlay */}
             <div style={{

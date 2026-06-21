@@ -92,7 +92,8 @@ const Intro = (props: { title: string }) => {
 				...styles.disclaimer,
 				opacity: interpolate(frame, [0, 60, 240, 370], [0, 0.3, 0.3, 0], interPolateOptions),
 			}} >This is not an AI generated video. Idea, Voice, design, animations, and code are all handcrafted with care ❤️</p>
-			<Assets.IntroMusic trimAfter={600} />
+			{/* <Assets.IntroMusic trimAfter={600} /> */}
+			<Assets.IntroMusic />
 		</div>
 	);
 };

@@ -17,6 +17,16 @@ const about = (from: number): MouthType[] => {
   ]
 }
 
+const actual = (from: number): MouthType[] => {
+  return [
+    { viseme: 'a', frame: from + 0 },
+    { viseme: 'ch', frame: from + 5 },
+    { viseme: 'uu', frame: from + 10 },
+    { viseme: 'a', frame: from + 15 },
+    { viseme: 'n', frame: from + 20 },
+  ]
+}
+
 const actually = (from: number): MouthType[] => {
   return [
     { viseme: 'a', frame: from + 0 },
@@ -26,6 +36,13 @@ const actually = (from: number): MouthType[] => {
     { viseme: 'a', frame: from + 20 },
     { viseme: 'n', frame: from + 25 },
     { viseme: 'ii', frame: from + 30 },
+  ]
+}
+
+const ai = (from: number): MouthType[] => {
+  return [
+    { viseme: 'a', frame: from + 0 },
+    { viseme: 'ii', frame: from + 10 },
   ]
 }
 
@@ -111,6 +128,18 @@ const app = (from: number): MouthType[] => {
   ]
 }
 
+const apparently = (from: number): MouthType[] => {
+  return [
+    { viseme: 'a', frame: from + 0 },
+    { viseme: 'm', frame: from + 5 },
+    { viseme: 'a', frame: from + 10 },
+    { viseme: 'n', frame: from + 15 },
+    { viseme: 'a', frame: from + 20 },
+    { viseme: 'n', frame: from + 25 },
+    { viseme: 'ii', frame: from + 30 },
+  ]
+}
+
 const approaches = (from: number): MouthType[] => {
   return [
     { viseme: 'a', frame: from + 0 },
@@ -121,6 +150,14 @@ const approaches = (from: number): MouthType[] => {
     { viseme: 'ch', frame: from + 25 },
     { viseme: 'a', frame: from + 30 },
     { viseme: 'ch', frame: from + 35 },
+  ]
+}
+
+const apps = (from: number): MouthType[] => {
+  return [
+    { viseme: 'a', frame: from + 0 },
+    { viseme: 'm', frame: from + 5 },
+    { viseme: 'ch', frame: from + 10 },
   ]
 }
 
@@ -141,6 +178,14 @@ const arguing = (from: number): MouthType[] => {
     { viseme: 'ii', frame: from + 20 },
     { viseme: 'n', frame: from + 25 },
     { viseme: 'ch', frame: from + 30 },
+  ]
+}
+
+const asked = (from: number): MouthType[] => {
+  return [
+    { viseme: 'a', frame: from + 0 },
+    { viseme: 'ch', frame: from + 10 },
+    { viseme: 'n', frame: from + 20 },
   ]
 }
 
@@ -387,6 +432,17 @@ const but = (from: number): MouthType[] => {
   ]
 }
 
+const buttons = (from: number): MouthType[] => {
+  return [
+    { viseme: 'm', frame: from + 0 },
+    { viseme: 'uu', frame: from + 5 },
+    { viseme: 'n', frame: from + 10 },
+    { viseme: 'a', frame: from + 15 },
+    { viseme: 'n', frame: from + 20 },
+    { viseme: 'ch', frame: from + 25 },
+  ]
+}
+
 const by = (from: number): MouthType[] => {
   return [
     { viseme: 'm', frame: from + 0 },
@@ -520,12 +576,33 @@ const coding = (from: number): MouthType[] => {
   ]
 }
 
+const coffee = (from: number): MouthType[] => {
+  return [
+    { viseme: 'ch', frame: from + 0 },
+    { viseme: 'o', frame: from + 5 },
+    { viseme: 'f', frame: from + 10 },
+    { viseme: 'ii', frame: from + 15 },
+  ]
+}
+
 const come = (from: number): MouthType[] => {
   return [
     { viseme: 'ch', frame: from + 0 },
     { viseme: 'o', frame: from + 5 },
     { viseme: 'm', frame: from + 10 },
     { viseme: 'a', frame: from + 15 },
+  ]
+}
+
+const completely = (from: number): MouthType[] => {
+  return [
+    { viseme: 'ch', frame: from + 0 },
+    { viseme: 'o', frame: from + 5 },
+    { viseme: 'm', frame: from + 10 },
+    { viseme: 'n', frame: from + 15 },
+    { viseme: 'ii', frame: from + 20 },
+    { viseme: 'n', frame: from + 25 },
+    { viseme: 'ii', frame: from + 30 },
   ]
 }
 
@@ -574,6 +651,15 @@ const convention = (from: number): MouthType[] => {
     { viseme: 'ii', frame: from + 30 },
     { viseme: 'o', frame: from + 35 },
     { viseme: 'n', frame: from + 40 },
+  ]
+}
+
+const copy = (from: number): MouthType[] => {
+  return [
+    { viseme: 'ch', frame: from + 0 },
+    { viseme: 'o', frame: from + 5 },
+    { viseme: 'm', frame: from + 10 },
+    { viseme: 'ii', frame: from + 15 },
   ]
 }
 
@@ -661,6 +747,17 @@ const deep = (from: number): MouthType[] => {
     { viseme: 'n', frame: from + 0 },
     { viseme: 'a', frame: from + 10 },
     { viseme: 'm', frame: from + 20 },
+  ]
+}
+
+const design = (from: number): MouthType[] => {
+  return [
+    { viseme: 'n', frame: from + 0 },
+    { viseme: 'ii', frame: from + 5 },
+    { viseme: 'ch', frame: from + 10 },
+    { viseme: 'a', frame: from + 15 },
+    { viseme: 'ii', frame: from + 20 },
+    { viseme: 'n', frame: from + 25 },
   ]
 }
 
@@ -892,6 +989,16 @@ const entropy = (from: number): MouthType[] => {
   ]
 }
 
+const episode = (from: number): MouthType[] => {
+  return [
+    { viseme: 'ii', frame: from + 0 },
+    { viseme: 'm', frame: from + 5 },
+    { viseme: 'o', frame: from + 10 },
+    { viseme: 'n', frame: from + 15 },
+    { viseme: 'ii', frame: from + 20 },
+  ]
+}
+
 const even = (from: number): MouthType[] => {
   return [
     { viseme: 'a', frame: from + 0 },
@@ -970,6 +1077,17 @@ const explained = (from: number): MouthType[] => {
     { viseme: 'n', frame: from + 30 },
     { viseme: 'a', frame: from + 35 },
     { viseme: 'n', frame: from + 40 },
+  ]
+}
+
+const failure = (from: number): MouthType[] => {
+  return [
+    { viseme: 'f', frame: from + 0 },
+    { viseme: 'a', frame: from + 5 },
+    { viseme: 'ii', frame: from + 10 },
+    { viseme: 'n', frame: from + 15 },
+    { viseme: 'uu', frame: from + 20 },
+    { viseme: 'a', frame: from + 25 },
   ]
 }
 
@@ -1054,6 +1172,16 @@ const file = (from: number): MouthType[] => {
   ]
 }
 
+const files = (from: number): MouthType[] => {
+  return [
+    { viseme: 'f', frame: from + 0 },
+    { viseme: 'a', frame: from + 5 },
+    { viseme: 'ii', frame: from + 10 },
+    { viseme: 'n', frame: from + 15 },
+    { viseme: 'ch', frame: from + 20 },
+  ]
+}
+
 const _finally = (from: number): MouthType[] => {
   return [
     { viseme: 'f', frame: from + 0 },
@@ -1084,6 +1212,14 @@ const first = (from: number): MouthType[] => {
     { viseme: 'n', frame: from + 10 },
     { viseme: 'ch', frame: from + 15 },
     { viseme: 'n', frame: from + 20 },
+  ]
+}
+
+const five = (from: number): MouthType[] => {
+  return [
+    { viseme: 'f', frame: from + 0 },
+    { viseme: 'ii', frame: from + 5 },
+    { viseme: 'f', frame: from + 10 },
   ]
 }
 
@@ -1190,6 +1326,14 @@ const full = (from: number): MouthType[] => {
   ]
 }
 
+const fun = (from: number): MouthType[] => {
+  return [
+    { viseme: 'f', frame: from + 0 },
+    { viseme: 'uu', frame: from + 5 },
+    { viseme: 'n', frame: from + 10 },
+  ]
+}
+
 const generate = (from: number): MouthType[] => {
   return [
     { viseme: 'ch', frame: from + 0 },
@@ -1239,6 +1383,14 @@ const geneva = (from: number): MouthType[] => {
     { viseme: 'a', frame: from + 15 },
     { viseme: 'f', frame: from + 20 },
     { viseme: 'a', frame: from + 25 },
+  ]
+}
+
+const get = (from: number): MouthType[] => {
+  return [
+    { viseme: 'ch', frame: from + 0 },
+    { viseme: 'a', frame: from + 5 },
+    { viseme: 'n', frame: from + 10 },
   ]
 }
 
@@ -1304,6 +1456,21 @@ const grammatical = (from: number): MouthType[] => {
     { viseme: 'ch', frame: from + 35 },
     { viseme: 'a', frame: from + 40 },
     { viseme: 'n', frame: from + 45 },
+  ]
+}
+
+const gym = (from: number): MouthType[] => {
+  return [
+    { viseme: 'ch', frame: from + 0 },
+    { viseme: 'ii', frame: from + 5 },
+    { viseme: 'm', frame: from + 10 },
+  ]
+}
+
+const had = (from: number): MouthType[] => {
+  return [
+    { viseme: 'a', frame: from + 0 },
+    { viseme: 'n', frame: from + 10 },
   ]
 }
 
@@ -1376,6 +1543,16 @@ const how = (from: number): MouthType[] => {
   ]
 }
 
+const humans = (from: number): MouthType[] => {
+  return [
+    { viseme: 'uu', frame: from + 0 },
+    { viseme: 'm', frame: from + 5 },
+    { viseme: 'a', frame: from + 10 },
+    { viseme: 'n', frame: from + 15 },
+    { viseme: 'ch', frame: from + 20 },
+  ]
+}
+
 const i = (from: number): MouthType[] => {
   return [
     { viseme: 'ii', frame: from + 0 },
@@ -1400,6 +1577,19 @@ const images = (from: number): MouthType[] => {
   ]
 }
 
+const imaginary = (from: number): MouthType[] => {
+  return [
+    { viseme: 'ii', frame: from + 0 },
+    { viseme: 'm', frame: from + 5 },
+    { viseme: 'a', frame: from + 10 },
+    { viseme: 'ch', frame: from + 15 },
+    { viseme: 'a', frame: from + 20 },
+    { viseme: 'n', frame: from + 25 },
+    { viseme: 'a', frame: from + 30 },
+    { viseme: 'ii', frame: from + 35 },
+  ]
+}
+
 const _in = (from: number): MouthType[] => {
   return [
     { viseme: 'ii', frame: from + 0 },
@@ -1413,6 +1603,17 @@ const india = (from: number): MouthType[] => {
     { viseme: 'n', frame: from + 5 },
     { viseme: 'ii', frame: from + 10 },
     { viseme: 'a', frame: from + 15 },
+  ]
+}
+
+const instead = (from: number): MouthType[] => {
+  return [
+    { viseme: 'ii', frame: from + 0 },
+    { viseme: 'n', frame: from + 5 },
+    { viseme: 'ch', frame: from + 10 },
+    { viseme: 'n', frame: from + 15 },
+    { viseme: 'a', frame: from + 20 },
+    { viseme: 'n', frame: from + 25 },
   ]
 }
 
@@ -1494,6 +1695,15 @@ const javascript = (from: number): MouthType[] => {
   ]
 }
 
+const journey = (from: number): MouthType[] => {
+  return [
+    { viseme: 'ch', frame: from + 0 },
+    { viseme: 'uu', frame: from + 5 },
+    { viseme: 'n', frame: from + 10 },
+    { viseme: 'ii', frame: from + 15 },
+  ]
+}
+
 const jsdelivr = (from: number): MouthType[] => {
   return [
     { viseme: 'ch', frame: from + 0 },
@@ -1531,6 +1741,22 @@ const kannada = (from: number): MouthType[] => {
     { viseme: 'a', frame: from + 15 },
     { viseme: 'n', frame: from + 20 },
     { viseme: 'a', frame: from + 25 },
+  ]
+}
+
+const kind = (from: number): MouthType[] => {
+  return [
+    { viseme: 'ch', frame: from + 0 },
+    { viseme: 'a', frame: from + 5 },
+    { viseme: 'ii', frame: from + 10 },
+    { viseme: 'n', frame: from + 15 },
+  ]
+}
+
+const knew = (from: number): MouthType[] => {
+  return [
+    { viseme: 'n', frame: from + 0 },
+    { viseme: 'uu', frame: from + 10 },
   ]
 }
 
@@ -1660,6 +1886,17 @@ const localstorage = (from: number): MouthType[] => {
   ]
 }
 
+const logical = (from: number): MouthType[] => {
+  return [
+    { viseme: 'n', frame: from + 0 },
+    { viseme: 'o', frame: from + 5 },
+    { viseme: 'ch', frame: from + 10 },
+    { viseme: 'ii', frame: from + 15 },
+    { viseme: 'ch', frame: from + 20 },
+    { viseme: 'n', frame: from + 25 },
+  ]
+}
+
 const long = (from: number): MouthType[] => {
   return [
     { viseme: 'n', frame: from + 0 },
@@ -1694,6 +1931,19 @@ const machine = (from: number): MouthType[] => {
     { viseme: 'ii', frame: from + 20 },
     { viseme: 'n', frame: from + 25 },
     { viseme: 'a', frame: from + 30 },
+  ]
+}
+
+const mainstream = (from: number): MouthType[] => {
+  return [
+    { viseme: 'm', frame: from + 0 },
+    { viseme: 'a', frame: from + 5 },
+    { viseme: 'ii', frame: from + 10 },
+    { viseme: 'n', frame: from + 15 },
+    { viseme: 'ch', frame: from + 20 },
+    { viseme: 'n', frame: from + 25 },
+    { viseme: 'ii', frame: from + 30 },
+    { viseme: 'm', frame: from + 35 },
   ]
 }
 
@@ -1747,6 +1997,19 @@ const means = (from: number): MouthType[] => {
     { viseme: 'a', frame: from + 5 },
     { viseme: 'n', frame: from + 10 },
     { viseme: 'ch', frame: from + 15 },
+  ]
+}
+
+const membership = (from: number): MouthType[] => {
+  return [
+    { viseme: 'm', frame: from + 0 },
+    { viseme: 'a', frame: from + 5 },
+    { viseme: 'm', frame: from + 10 },
+    { viseme: 'n', frame: from + 15 },
+    { viseme: 'a', frame: from + 20 },
+    { viseme: 'ch', frame: from + 25 },
+    { viseme: 'ii', frame: from + 30 },
+    { viseme: 'm', frame: from + 35 },
   ]
 }
 
@@ -1806,6 +2069,18 @@ const microsoft = (from: number): MouthType[] => {
     { viseme: 'o', frame: from + 30 },
     { viseme: 'f', frame: from + 35 },
     { viseme: 'n', frame: from + 40 },
+  ]
+}
+
+const midnight = (from: number): MouthType[] => {
+  return [
+    { viseme: 'm', frame: from + 0 },
+    { viseme: 'ii', frame: from + 5 },
+    { viseme: 'n', frame: from + 10 },
+    { viseme: 'n', frame: from + 15 },
+    { viseme: 'a', frame: from + 20 },
+    { viseme: 'ii', frame: from + 25 },
+    { viseme: 'n', frame: from + 30 },
   ]
 }
 
@@ -1902,6 +2177,15 @@ const next = (from: number): MouthType[] => {
     { viseme: 'n', frame: from + 0 },
     { viseme: 'a', frame: from + 5 },
     { viseme: 'ch', frame: from + 10 },
+    { viseme: 'n', frame: from + 15 },
+  ]
+}
+
+const night = (from: number): MouthType[] => {
+  return [
+    { viseme: 'n', frame: from + 0 },
+    { viseme: 'a', frame: from + 5 },
+    { viseme: 'ii', frame: from + 10 },
     { viseme: 'n', frame: from + 15 },
   ]
 }
@@ -2004,11 +2288,29 @@ const or = (from: number): MouthType[] => {
   ]
 }
 
+const other = (from: number): MouthType[] => {
+  return [
+    { viseme: 'o', frame: from + 0 },
+    { viseme: 'n', frame: from + 5 },
+    { viseme: 'a', frame: from + 10 },
+  ]
+}
+
 const out = (from: number): MouthType[] => {
   return [
     { viseme: 'o', frame: from + 0 },
     { viseme: 'uu', frame: from + 10 },
     { viseme: 'n', frame: from + 20 },
+  ]
+}
+
+const outage = (from: number): MouthType[] => {
+  return [
+    { viseme: 'o', frame: from + 0 },
+    { viseme: 'uu', frame: from + 5 },
+    { viseme: 'n', frame: from + 10 },
+    { viseme: 'ii', frame: from + 15 },
+    { viseme: 'ch', frame: from + 20 },
   ]
 }
 
@@ -2019,6 +2321,16 @@ const panic = (from: number): MouthType[] => {
     { viseme: 'n', frame: from + 10 },
     { viseme: 'ii', frame: from + 15 },
     { viseme: 'ch', frame: from + 20 },
+  ]
+}
+
+const paste = (from: number): MouthType[] => {
+  return [
+    { viseme: 'm', frame: from + 0 },
+    { viseme: 'a', frame: from + 5 },
+    { viseme: 'ii', frame: from + 10 },
+    { viseme: 'ch', frame: from + 15 },
+    { viseme: 'n', frame: from + 20 },
   ]
 }
 
@@ -2040,6 +2352,18 @@ const people = (from: number): MouthType[] => {
     { viseme: 'm', frame: from + 15 },
     { viseme: 'n', frame: from + 20 },
     { viseme: 'a', frame: from + 25 },
+  ]
+}
+
+const perfect = (from: number): MouthType[] => {
+  return [
+    { viseme: 'm', frame: from + 0 },
+    { viseme: 'a', frame: from + 5 },
+    { viseme: 'n', frame: from + 10 },
+    { viseme: 'f', frame: from + 15 },
+    { viseme: 'a', frame: from + 20 },
+    { viseme: 'ch', frame: from + 25 },
+    { viseme: 'n', frame: from + 30 },
   ]
 }
 
@@ -2069,6 +2393,37 @@ const performs = (from: number): MouthType[] => {
   ]
 }
 
+const plan = (from: number): MouthType[] => {
+  return [
+    { viseme: 'm', frame: from + 0 },
+    { viseme: 'n', frame: from + 5 },
+    { viseme: 'a', frame: from + 10 },
+    { viseme: 'n', frame: from + 15 },
+  ]
+}
+
+const plans = (from: number): MouthType[] => {
+  return [
+    { viseme: 'm', frame: from + 0 },
+    { viseme: 'n', frame: from + 5 },
+    { viseme: 'a', frame: from + 10 },
+    { viseme: 'n', frame: from + 15 },
+    { viseme: 'ch', frame: from + 20 },
+  ]
+}
+
+const politely = (from: number): MouthType[] => {
+  return [
+    { viseme: 'm', frame: from + 0 },
+    { viseme: 'o', frame: from + 5 },
+    { viseme: 'n', frame: from + 10 },
+    { viseme: 'a', frame: from + 15 },
+    { viseme: 'ii', frame: from + 20 },
+    { viseme: 'n', frame: from + 25 },
+    { viseme: 'ii', frame: from + 30 },
+  ]
+}
+
 const politician = (from: number): MouthType[] => {
   return [
     { viseme: 'm', frame: from + 0 },
@@ -2081,6 +2436,40 @@ const politician = (from: number): MouthType[] => {
     { viseme: 'ii', frame: from + 35 },
     { viseme: 'a', frame: from + 40 },
     { viseme: 'n', frame: from + 45 },
+  ]
+}
+
+const postman = (from: number): MouthType[] => {
+  return [
+    { viseme: 'm', frame: from + 0 },
+    { viseme: 'o', frame: from + 5 },
+    { viseme: 'ch', frame: from + 10 },
+    { viseme: 'n', frame: from + 15 },
+    { viseme: 'm', frame: from + 20 },
+    { viseme: 'a', frame: from + 25 },
+    { viseme: 'n', frame: from + 30 },
+  ]
+}
+
+const powerful = (from: number): MouthType[] => {
+  return [
+    { viseme: 'm', frame: from + 0 },
+    { viseme: 'a', frame: from + 5 },
+    { viseme: 'uu', frame: from + 10 },
+    { viseme: 'a', frame: from + 15 },
+    { viseme: 'f', frame: from + 20 },
+    { viseme: 'uu', frame: from + 25 },
+    { viseme: 'n', frame: from + 30 },
+  ]
+}
+
+const prefer = (from: number): MouthType[] => {
+  return [
+    { viseme: 'm', frame: from + 0 },
+    { viseme: 'n', frame: from + 5 },
+    { viseme: 'ii', frame: from + 10 },
+    { viseme: 'f', frame: from + 15 },
+    { viseme: 'a', frame: from + 20 },
   ]
 }
 
@@ -2108,6 +2497,18 @@ const pretty = (from: number): MouthType[] => {
   ]
 }
 
+const previous = (from: number): MouthType[] => {
+  return [
+    { viseme: 'm', frame: from + 0 },
+    { viseme: 'n', frame: from + 5 },
+    { viseme: 'ii', frame: from + 10 },
+    { viseme: 'f', frame: from + 15 },
+    { viseme: 'ii', frame: from + 20 },
+    { viseme: 'a', frame: from + 25 },
+    { viseme: 'ch', frame: from + 30 },
+  ]
+}
+
 const procrastination = (from: number): MouthType[] => {
   return [
     { viseme: 'm', frame: from + 0 },
@@ -2125,6 +2526,19 @@ const procrastination = (from: number): MouthType[] => {
     { viseme: 'ii', frame: from + 60 },
     { viseme: 'o', frame: from + 65 },
     { viseme: 'n', frame: from + 70 },
+  ]
+}
+
+const production = (from: number): MouthType[] => {
+  return [
+    { viseme: 'm', frame: from + 0 },
+    { viseme: 'n', frame: from + 5 },
+    { viseme: 'o', frame: from + 10 },
+    { viseme: 'n', frame: from + 15 },
+    { viseme: 'uu', frame: from + 20 },
+    { viseme: 'ch', frame: from + 25 },
+    { viseme: 'a', frame: from + 30 },
+    { viseme: 'n', frame: from + 35 },
   ]
 }
 
@@ -2201,6 +2615,17 @@ const raw = (from: number): MouthType[] => {
   ]
 }
 
+const reading = (from: number): MouthType[] => {
+  return [
+    { viseme: 'n', frame: from + 0 },
+    { viseme: 'ii', frame: from + 5 },
+    { viseme: 'n', frame: from + 10 },
+    { viseme: 'ii', frame: from + 15 },
+    { viseme: 'n', frame: from + 20 },
+    { viseme: 'ch', frame: from + 25 },
+  ]
+}
+
 const refuses = (from: number): MouthType[] => {
   return [
     { viseme: 'n', frame: from + 0 },
@@ -2258,6 +2683,19 @@ const riveting = (from: number): MouthType[] => {
     { viseme: 'ii', frame: from + 25 },
     { viseme: 'n', frame: from + 30 },
     { viseme: 'ch', frame: from + 35 },
+  ]
+}
+
+const rogation = (from: number): MouthType[] => {
+  return [
+    { viseme: 'n', frame: from + 0 },
+    { viseme: 'o', frame: from + 5 },
+    { viseme: 'ch', frame: from + 10 },
+    { viseme: 'a', frame: from + 15 },
+    { viseme: 'ii', frame: from + 20 },
+    { viseme: 'ch', frame: from + 25 },
+    { viseme: 'a', frame: from + 30 },
+    { viseme: 'n', frame: from + 35 },
   ]
 }
 
@@ -2760,6 +3198,15 @@ const trust = (from: number): MouthType[] => {
   ]
 }
 
+const turns = (from: number): MouthType[] => {
+  return [
+    { viseme: 'n', frame: from + 0 },
+    { viseme: 'uu', frame: from + 5 },
+    { viseme: 'n', frame: from + 10 },
+    { viseme: 'ch', frame: from + 15 },
+  ]
+}
+
 const twentyTwentyFour = (from: number): MouthType[] => {
   return [
     { viseme: 'n', frame: from + 0 },
@@ -2772,12 +3219,26 @@ const twentyTwentyFour = (from: number): MouthType[] => {
   ]
 }
 
+const two = (from: number): MouthType[] => {
+  return [
+    { viseme: 'n', frame: from + 0 },
+    { viseme: 'uu', frame: from + 10 },
+  ]
+}
+
 const type = (from: number): MouthType[] => {
   return [
     { viseme: 'n', frame: from + 0 },
     { viseme: 'ii', frame: from + 5 },
     { viseme: 'm', frame: from + 10 },
     { viseme: 'a', frame: from + 15 },
+  ]
+}
+
+const ui = (from: number): MouthType[] => {
+  return [
+    { viseme: 'uu', frame: from + 0 },
+    { viseme: 'ii', frame: from + 10 },
   ]
 }
 
@@ -2793,12 +3254,48 @@ const ultimate = (from: number): MouthType[] => {
   ]
 }
 
+const unfortunately = (from: number): MouthType[] => {
+  return [
+    { viseme: 'uu', frame: from + 0 },
+    { viseme: 'n', frame: from + 5 },
+    { viseme: 'f', frame: from + 10 },
+    { viseme: 'o', frame: from + 15 },
+    { viseme: 'ch', frame: from + 20 },
+    { viseme: 'a', frame: from + 25 },
+    { viseme: 'n', frame: from + 30 },
+    { viseme: 'a', frame: from + 35 },
+    { viseme: 'n', frame: from + 40 },
+    { viseme: 'ii', frame: from + 45 },
+  ]
+}
+
+const universe = (from: number): MouthType[] => {
+  return [
+    { viseme: 'uu', frame: from + 0 },
+    { viseme: 'n', frame: from + 5 },
+    { viseme: 'ii', frame: from + 10 },
+    { viseme: 'f', frame: from + 15 },
+    { viseme: 'a', frame: from + 20 },
+    { viseme: 'ch', frame: from + 25 },
+  ]
+}
+
 const until = (from: number): MouthType[] => {
   return [
     { viseme: 'uu', frame: from + 0 },
     { viseme: 'n', frame: from + 5 },
     { viseme: 'ii', frame: from + 10 },
     { viseme: 'n', frame: from + 15 },
+  ]
+}
+
+const unused = (from: number): MouthType[] => {
+  return [
+    { viseme: 'uu', frame: from + 0 },
+    { viseme: 'n', frame: from + 5 },
+    { viseme: 'uu', frame: from + 10 },
+    { viseme: 'ch', frame: from + 15 },
+    { viseme: 'n', frame: from + 20 },
   ]
 }
 
@@ -2838,6 +3335,15 @@ const user = (from: number): MouthType[] => {
   ]
 }
 
+const users = (from: number): MouthType[] => {
+  return [
+    { viseme: 'uu', frame: from + 0 },
+    { viseme: 'ch', frame: from + 5 },
+    { viseme: 'a', frame: from + 10 },
+    { viseme: 'ch', frame: from + 15 },
+  ]
+}
+
 const version = (from: number): MouthType[] => {
   return [
     { viseme: 'f', frame: from + 0 },
@@ -2863,6 +3369,15 @@ const versions = (from: number): MouthType[] => {
   ]
 }
 
+const very = (from: number): MouthType[] => {
+  return [
+    { viseme: 'f', frame: from + 0 },
+    { viseme: 'a', frame: from + 5 },
+    { viseme: 'n', frame: from + 10 },
+    { viseme: 'ii', frame: from + 15 },
+  ]
+}
+
 const via = (from: number): MouthType[] => {
   return [
     { viseme: 'f', frame: from + 0 },
@@ -2878,6 +3393,17 @@ const video = (from: number): MouthType[] => {
     { viseme: 'n', frame: from + 10 },
     { viseme: 'a', frame: from + 15 },
     { viseme: 'o', frame: from + 20 },
+  ]
+}
+
+const videos = (from: number): MouthType[] => {
+  return [
+    { viseme: 'f', frame: from + 0 },
+    { viseme: 'ii', frame: from + 5 },
+    { viseme: 'n', frame: from + 10 },
+    { viseme: 'ii', frame: from + 15 },
+    { viseme: 'o', frame: from + 20 },
+    { viseme: 'ch', frame: from + 25 },
   ]
 }
 
@@ -2987,6 +3513,13 @@ const _while = (from: number): MouthType[] => {
   ]
 }
 
+const who = (from: number): MouthType[] => {
+  return [
+    { viseme: 'uu', frame: from + 0 },
+    { viseme: 'uu', frame: from + 10 },
+  ]
+}
+
 const will = (from: number): MouthType[] => {
   return [
     { viseme: 'uu', frame: from + 0 },
@@ -3078,12 +3611,16 @@ const your = (from: number): MouthType[] => {
 }
 
 export const speak = {
-  /** duration: 0 */
+/** duration: 0 */
   a,
   /** duration: 20 */
   about,
+  /** duration: 20 */
+  actual,
   /** duration: 30 */
   actually,
+  /** duration: 10 */
+  ai,
   /** duration: 40 */
   algorithm,
   /** duration: 10 */
@@ -3102,12 +3639,18 @@ export const speak = {
   anyway,
   /** duration: 10 */
   app,
+  /** duration: 30 */
+  apparently,
   /** duration: 35 */
   approaches,
+  /** duration: 10 */
+  apps,
   /** duration: 20 */
   are,
   /** duration: 30 */
   arguing,
+  /** duration: 20 */
+  asked,
   /** duration: 10 */
   asks,
   /** duration: 20 */
@@ -3158,6 +3701,8 @@ export const speak = {
   bunker,
   /** duration: 20 */
   but,
+  /** duration: 25 */
+  buttons,
   /** duration: 10 */
   by,
   /** duration: 20 */
@@ -3189,7 +3734,11 @@ export const speak = {
   /** duration: 25 */
   coding,
   /** duration: 15 */
+  coffee,
+  /** duration: 15 */
   come,
+  /** duration: 30 */
+  completely,
   /** duration: 25 */
   complex,
   /** duration: 35 */
@@ -3198,6 +3747,8 @@ export const speak = {
   content,
   /** duration: 40 */
   convention,
+  /** duration: 15 */
+  copy,
   /** duration: 25 */
   creates,
   /** duration: 15 */
@@ -3216,6 +3767,8 @@ export const speak = {
   decided,
   /** duration: 20 */
   deep,
+  /** duration: 25 */
+  design,
   /** duration: 35 */
   designed,
   /** duration: 40 */
@@ -3258,6 +3811,8 @@ export const speak = {
   enter,
   /** duration: 20 */
   entropy,
+  /** duration: 20 */
+  episode,
   /** duration: 15 */
   even,
   /** duration: 15 */
@@ -3272,6 +3827,8 @@ export const speak = {
   expired,
   /** duration: 40 */
   explained,
+  /** duration: 25 */
+  failure,
   /** duration: 20 */
   fall,
   /** duration: 20 */
@@ -3288,12 +3845,16 @@ export const speak = {
   fetches,
   /** duration: 15 */
   file,
+  /** duration: 20 */
+  files,
   /** duration: 25 */
   finally: _finally,
   /** duration: 30 */
   fingers,
   /** duration: 20 */
   first,
+  /** duration: 10 */
+  five,
   /** duration: 40 */
   flashcards,
   /** duration: 20 */
@@ -3314,6 +3875,8 @@ export const speak = {
   frontend,
   /** duration: 20 */
   full,
+  /** duration: 10 */
+  fun,
   /** duration: 35 */
   generate,
   /** duration: 40 */
@@ -3322,6 +3885,8 @@ export const speak = {
   generator,
   /** duration: 25 */
   geneva,
+  /** duration: 10 */
+  get,
   /** duration: 35 */
   girlfriend,
   /** duration: 25 */
@@ -3334,6 +3899,10 @@ export const speak = {
   goal,
   /** duration: 45 */
   grammatical,
+  /** duration: 10 */
+  gym,
+  /** duration: 10 */
+  had,
   /** duration: 25 */
   handshake,
   /** duration: 10 */
@@ -3350,16 +3919,22 @@ export const speak = {
   hosting,
   /** duration: 20 */
   how,
+  /** duration: 20 */
+  humans,
   /** duration: 0 */
   i,
   /** duration: 10 */
   if: _if,
   /** duration: 25 */
   images,
+  /** duration: 35 */
+  imaginary,
   /** duration: 10 */
   in: _in,
   /** duration: 15 */
   india,
+  /** duration: 25 */
+  instead,
   /** duration: 35 */
   interface: _interface,
   /** duration: 25 */
@@ -3376,6 +3951,8 @@ export const speak = {
   its,
   /** duration: 40 */
   javascript,
+  /** duration: 15 */
+  journey,
   /** duration: 30 */
   jsdelivr,
   /** duration: 20 */
@@ -3384,6 +3961,10 @@ export const speak = {
   just,
   /** duration: 25 */
   kannada,
+  /** duration: 15 */
+  kind,
+  /** duration: 10 */
+  knew,
   /** duration: 15 */
   know,
   /** duration: 35 */
@@ -3408,6 +3989,8 @@ export const speak = {
   local,
   /** duration: 55 */
   localstorage,
+  /** duration: 25 */
+  logical,
   /** duration: 15 */
   long,
   /** duration: 20 */
@@ -3416,6 +3999,8 @@ export const speak = {
   looks,
   /** duration: 30 */
   machine,
+  /** duration: 35 */
+  mainstream,
   /** duration: 15 */
   make,
   /** duration: 40 */
@@ -3426,6 +4011,8 @@ export const speak = {
   match,
   /** duration: 15 */
   means,
+  /** duration: 35 */
+  membership,
   /** duration: 45 */
   memorizing,
   /** duration: 20 */
@@ -3436,6 +4023,8 @@ export const speak = {
   metadata,
   /** duration: 40 */
   microsoft,
+  /** duration: 30 */
+  midnight,
   /** duration: 20 */
   moment,
   /** duration: 15 */
@@ -3456,6 +4045,8 @@ export const speak = {
   new: _new,
   /** duration: 15 */
   next,
+  /** duration: 15 */
+  night,
   /** duration: 25 */
   normal,
   /** duration: 20 */
@@ -3478,26 +4069,50 @@ export const speak = {
   options,
   /** duration: 10 */
   or,
+  /** duration: 10 */
+  other,
   /** duration: 20 */
   out,
   /** duration: 20 */
+  outage,
+  /** duration: 20 */
   panic,
+  /** duration: 20 */
+  paste,
   /** duration: 20 */
   pattern,
   /** duration: 25 */
   people,
+  /** duration: 30 */
+  perfect,
   /** duration: 35 */
   perfectly,
   /** duration: 35 */
   performs,
+  /** duration: 15 */
+  plan,
+  /** duration: 20 */
+  plans,
+  /** duration: 30 */
+  politely,
   /** duration: 45 */
   politician,
+  /** duration: 30 */
+  postman,
+  /** duration: 30 */
+  powerful,
+  /** duration: 20 */
+  prefer,
   /** duration: 40 */
   pretending,
   /** duration: 20 */
   pretty,
+  /** duration: 30 */
+  previous,
   /** duration: 70 */
   procrastination,
+  /** duration: 35 */
+  production,
   /** duration: 55 */
   productivity,
   /** duration: 40 */
@@ -3510,6 +4125,8 @@ export const speak = {
   randomized,
   /** duration: 20 */
   raw,
+  /** duration: 25 */
+  reading,
   /** duration: 30 */
   refuses,
   /** duration: 30 */
@@ -3520,6 +4137,8 @@ export const speak = {
   right,
   /** duration: 35 */
   riveting,
+  /** duration: 35 */
+  rogation,
   /** duration: 25 */
   runtime,
   /** duration: 0 */
@@ -3618,13 +4237,25 @@ export const speak = {
   translate,
   /** duration: 15 */
   trust,
+  /** duration: 15 */
+  turns,
   twentyTwentyFour,
+  /** duration: 10 */
+  two,
   /** duration: 15 */
   type,
+  /** duration: 10 */
+  ui,
   /** duration: 30 */
   ultimate,
+  /** duration: 45 */
+  unfortunately,
+  /** duration: 25 */
+  universe,
   /** duration: 15 */
   until,
+  /** duration: 20 */
+  unused,
   /** duration: 30 */
   updates,
   /** duration: 10 */
@@ -3633,14 +4264,20 @@ export const speak = {
   use,
   /** duration: 15 */
   user,
+  /** duration: 15 */
+  users,
   /** duration: 30 */
   version,
   /** duration: 35 */
   versions,
+  /** duration: 15 */
+  very,
   /** duration: 20 */
   via,
   /** duration: 20 */
   video,
+  /** duration: 25 */
+  videos,
   /** duration: 30 */
   waiting,
   /** duration: 20 */
@@ -3663,6 +4300,8 @@ export const speak = {
   where,
   /** duration: 20 */
   while: _while,
+  /** duration: 10 */
+  who,
   /** duration: 20 */
   will,
   /** duration: 15 */
