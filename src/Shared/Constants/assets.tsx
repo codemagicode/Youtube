@@ -1,7 +1,6 @@
 import { Img, ImgProps, staticFile, Html5Video as HTML5Video, Html5Audio as HTML5Audio, RemotionVideoProps as VideoProps } from "remotion";
-import { ComponentProps } from "react";
+import { ComponentProps, DetailedHTMLProps, HTMLAttributes, useEffect, useMemo, useState } from "react";
 import { SafeAsset } from "../Helpers/components";
-import { Gif } from "@remotion/gif";
 
 type AudioProps = ComponentProps<typeof HTML5Audio>
 
@@ -614,10 +613,6 @@ const Namaste = (props: Omit<ImgProps, 'src'>) => {
     return (<SafeAsset component={Img} {...props} data-asset="Namaste" src={staticFile(assetPath.gifFile('namaste.gif'))} />);
 }
 
-const Voice4Handshake = (props: { clip: string }) => {
-    return (<SafeAsset component={HTML5Audio} src={staticFile(assetPath.audioFile(`4-${props.clip}.mp3`))} />)
-}
-
 const Giu1 = (props: Omit<ImgProps, 'src'>) => {
 
     return (<SafeAsset component={Img} {...props} data-asset="Giu1" src={staticFile(assetPath.svgFile('giu.svg'))} />)
@@ -687,11 +682,36 @@ const Fah = (props: Omit<AudioProps, 'src'>) => {
     return (<SafeAsset component={HTML5Audio} {...props} data-asset="CartoonBombSound" src={staticFile(assetPath.audioFile('fah.mp3'))} />);
 }
 
+const Mandala = (props: Omit<ImgProps, 'src'> & {svgNo: number}) => {
+    const {svgNo, ...rest} = props
+    return (<SafeAsset component={Img} {...rest} data-asset={"Mandala-" + svgNo} src={staticFile(assetPath.svgFile(`mandala/${svgNo || 1}.svg`))} />);
+}
+
+const RainBow  = (props: Omit<ImgProps, 'src'> ) => {
+    return (<SafeAsset component={Img} {...props} data-asset="RainBow" src={staticFile(assetPath.svgFile(`rainbow.svg`))} />);
+}
+
+const Coffee  = (props: Omit<ImgProps, 'src'> ) => {
+    return (<SafeAsset component={Img} {...props} data-asset="Coffee" src={staticFile(assetPath.svgFile(`coffee.svg`))} />);
+}
+
+//================================================
+// Voice files
+//================================================
+
+const Voice4Handshake = (props: { clip: string }) => {
+    return (<SafeAsset component={HTML5Audio} src={staticFile(assetPath.audioFile(`4-handshake/4-${props.clip}.mp3`))} />)
+}
+
+const Voice5UiDesign = (props: { clip: string }) => {
+    return (<SafeAsset component={HTML5Audio} src={staticFile(assetPath.audioFile(`5-ui-design/5_${props.clip}.mp3`))} />)
+}
+
 /**
  * Assets
  */
 export const Assets = {
-    Voice4Handshake, CatoonBombSound, Fah,
+    Voice4Handshake, CatoonBombSound, Fah, Voice5UiDesign, Mandala, RainBow, Coffee,
     Scene6Bg, MaskMeme, ClockHand, Clock, Pub, ConvRev, Conv, Download, LocalStorage, CdnSoftware, MetaJsonEnterDoor, MetaJsonDoorClosed, Jsdelivr,
     Github, MoneyChair, Database, Politician, JsFramework, UmsThumbnail,
     Giu1, Giu2, Giu3, Slipper, Internet, InternetSlow, InternetCut,

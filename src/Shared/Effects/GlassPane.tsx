@@ -25,7 +25,7 @@ export const GlassPane: React.FC<GlassPaneProps> = ({
                     inset 20px 20px 40px rgba(255, 255, 255, 0.2),
                     0 10px 30px rgba(0, 0, 0, 0.6)
                 `,
-        border: '1px solid rgba(255, 255, 255, 1)',
+        // border: '1px solid rgba(255, 255, 255, 1)',
         overflow: 'hidden',
         ...style,
       }}
