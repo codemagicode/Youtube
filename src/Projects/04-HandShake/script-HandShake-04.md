@@ -66,22 +66,22 @@ Bye.
 ### Scene 1: RecapIntro - complete: Audio, Code, Mapping
 - **Content :** Welcome back. If you are new here, I am building a language app called Hello-Kannada. If you are returning, I assume your Netflix subscription expired and you have nothing better to do. In the last video, I explained the User Management System. It was riveting. I almost bored myself to sleep, and I don't even sleep.
 
-### Scene 2: TheEngine - - complete: Audio, Code, Mapping
+### Scene 2: TheEngine
 - **Content :** Today, we are building 'The Engine'. Because right now, the app is just a fancy empty shell. Like a politician, or a JavaScript framework released in 2024.
 
-### Scene 3: FetchingStrategy - - complete: Audio, Code, Mapping
+### Scene 3: FetchingStrategy
 - **Content :** First, we need to fetch data. Now, a normal developer would use a database. But I am not normal. I am cheap. So I am hosting everything on GitHub and serving it via jsDelivr. But how does the app know what to fetch? Enter meta.json.
 
-### Scene 4: HandshakeProcess - - complete: Audio, Code, Mapping
+### Scene 4: HandshakeProcess
 - **Content :** This file is basically the bouncer at the club. The app approaches the CDN and performs a 'Handshake'. It asks, 'Do you have the stuff?' The CDN says, 'Yes, here is version 1.2.' The app checks its local storage. 'I have version 1.1.' Panic ensues. Updates are downloaded. If the versions match... doing nothing is the ultimate goal of engineering.
 
-### Scene 5: ContentSource - - complete: Audio, Code, Mapping
+### Scene 5: ContentSource
 - **Content :** Now, where does the content come from? I decided that simple flashcards were for babies. I wanted complex sentence structures with deep grammatical metadata. Writing this in raw JSON is a form of torture banned by the Geneva Convention. So, we will build another app called 'Kannada-Teacher'. Yes. we will build a frontend to generate the backend for my frontend.
 
-### Scene 6: ToolBuilding - - complete: Audio, Code, Mapping
+### Scene 6: ToolBuilding
 - **Content :** we will spend more time building a tool that mostly only I will ever use. This is not productivity. This is procrastination with a user interface. But it works. It spits out perfectly formatted JSON so I don't have to type curly braces until my fingers fall off.
 
-### Scene 7: CachingIntro
+### Scene 7: CachingIntro 
 - **Content :** Let’s talk about Caching. Like everyone in India I have trust issues with the internet. It is slow. It cuts out. It is full of people arguing like my girlfriend. I want my app to be a safe space. A sanctuary.
 
 ### Scene 8: DataBunker
